@@ -60,7 +60,10 @@ function App() {
         <Route path="/Proveedores" component={Proveedores}></Route>
         <Route path="/Comunicaciones" component={Comunicaciones}></Route>
         <Route path="/ComunicacionesRevisar" component={Comunicaciones}></Route>
-        <Route path="/ReportesProveedores" component={Reportesproveedores}></Route>
+        <Route
+          path="/ReportesProveedores"
+          component={Reportesproveedores}
+        ></Route>
         <Route path="/ReportesGYM" component={ReportesGYM}></Route>
         <Route path="/GestorDocumental" component={LoginContainer}></Route>
       </Switch>
