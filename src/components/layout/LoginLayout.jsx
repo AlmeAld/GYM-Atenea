@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import fire from '../../firebase.js';
+import React, { useState, useEffect } from "react";
+import fire from "../../firebase.js";
 import {
   TextField,
   Box,
   InputAdornment,
   Button,
   Grid,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import AccountCircle from '@material-ui/icons/AccountCircleOutlined';
-import Lock from '@material-ui/icons/LockOutlined';
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import AccountCircle from "@material-ui/icons/AccountCircleOutlined";
+import Lock from "@material-ui/icons/LockOutlined";
 
 // material styles
 const useStyles = makeStyles((theme) => ({
@@ -17,36 +17,36 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     spacing: 8,
     // boxShadow: theme.shadows[5],
-    boxSizing: 'border-box',
-    padding: '30px',
-    width: '410px',
-    height: '400px',
+    boxSizing: "border-box",
+    padding: "30px",
+    width: "410px",
+    height: "400px",
   },
   input: {
-    width: '350',
-    marginBottom: '20px',
-    margintLeft: 'auto',
+    width: "350",
+    marginBottom: "20px",
+    margintLeft: "auto",
   },
 }));
 
 function Login() {
-  const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [activeUser, setActiveUser] = useState(false);
 
   console.log(email, password);
 
   const clearInputs = () => {
-    setEmail('');
-    setPassword('');
+    setEmail("");
+    setPassword("");
   };
 
   const clearError = () => {
-    setPasswordError('');
-    setEmailError('');
+    setPasswordError("");
+    setEmailError("");
   };
 
   // firebase functions
@@ -57,12 +57,12 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .catch((error) => {
         switch (error.code) {
-          case 'auth/invalid-email':
-          case 'auth/user-disabled':
-          case 'auth/user-not-found':
+          case "auth/invalid-email":
+          case "auth/user-disabled":
+          case "auth/user-not-found":
             setEmailError(error.message);
             break;
-          case 'auth/wrong-password':
+          case "auth/wrong-password":
             setPassword(error.message);
             break;
           default:
@@ -78,11 +78,11 @@ function Login() {
       .createUserWithEmailAndPassword(email, password)
       .catch((error) => {
         switch (error.code) {
-          case 'auth/email-already-in-use':
-          case 'auth/invalid-email':
+          case "auth/email-already-in-use":
+          case "auth/invalid-email":
             setEmailError(error.message);
             break;
-          case 'auth/weak-password':
+          case "auth/weak-password":
             setPassword(error.message);
             break;
           default:
@@ -108,7 +108,7 @@ function Login() {
         clearInputs();
         setUser(user);
       } else {
-        setUser('');
+        setUser("");
       }
     });
   };
@@ -120,13 +120,13 @@ function Login() {
 
   return (
     <div>
-      <Grid container style={{ minHeight: '100vh' }}>
+      <Grid container style={{ minHeight: "100vh" }}>
         <Grid
           item
           sm={6}
           style={{
-            backgroundColor: '#6E3CD2',
-            borderRight: '2px solid lightgray',
+            backgroundColor: "#6E3CD2",
+            borderRight: "2px solid lightgray",
           }}
         >
           {/* <img src={Logo} alt="" style={{zIndex: "1000" , width:"150px", position:"absolute", marginTop: "50px",     marginLeft: "50px"}} 
@@ -150,12 +150,13 @@ function Login() {
           <div />
           <Box m={20} className={styles.cajaInput}>
             {/* <h1 id="title">{}</h1> */}
+            <p>Ingresa tu usuario y contraseña de red</p>
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                width: '350px',
-                marginBottom: '15px',
+                display: "flex",
+                flexDirection: "column",
+                width: "350px",
+                marginBottom: "15px",
               }}
             >
               <TextField
@@ -204,7 +205,7 @@ function Login() {
                   <p>
                     No tengo cuenta?
                     <span
-                      style={{ color: '#3f51b5', cursor: 'pointer' }}
+                      style={{ color: "#3f51b5", cursor: "pointer" }}
                       onClick={() => setActiveUser(!activeUser)}
                     >
                       Registrate
@@ -219,7 +220,7 @@ function Login() {
                   <p>
                     Ya tengo cuenta
                     <span
-                      style={{ color: '#3f51b5', cursor: 'pointer' }}
+                      style={{ color: "#3f51b5", cursor: "pointer" }}
                       onClick={() => setActiveUser(!activeUser)}
                     >
                       Ingresa
