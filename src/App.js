@@ -80,7 +80,7 @@ function App() {
         <Route path="/ReportesGYM">
           <ReportesGYM />
         </Route>
-        <Route path="/GestorDocumental" component={LoginContainer}></Route>
+        {/* <Route path="/GestorDocumental" component={LoginContainer}></Route> */}
       </Switch>
     </Router>
   );
