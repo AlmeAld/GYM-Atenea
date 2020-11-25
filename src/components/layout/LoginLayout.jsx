@@ -197,37 +197,18 @@ function Login() {
               <span>{passwordError}</span>
             </div>
             <div>
-              {activeUser ? (
-                <>
-                  <Button variant="contained" color="primary" onClick={Login}>
-                    Ingresar
-                  </Button>
-                  <p>
-                    No tengo cuenta?
-                    <span
-                      style={{ color: "#3f51b5", cursor: "pointer" }}
-                      onClick={() => setActiveUser(!activeUser)}
-                    >
-                      Registrate
-                    </span>
-                  </p>
-                </>
-              ) : (
-                <>
-                  <Button variant="contained" color="primary" onClick={SignUp}>
-                    Registrate
-                  </Button>
-                  <p>
-                    Ya tengo cuenta
-                    <span
-                      style={{ color: "#3f51b5", cursor: "pointer" }}
-                      onClick={() => setActiveUser(!activeUser)}
-                    >
-                      Ingresa
-                    </span>
-                  </p>
-                </>
-              )}
+              <Button variant="contained" color="primary" onClick={Login}>
+                Iniciar Sesión
+              </Button>
+              <p>
+                Olvidaste tu contraseña
+                <span
+                  style={{ color: "#3f51b5", cursor: "pointer" }}
+                  onClick={() => setActiveUser(!activeUser)}
+                >
+                  recuperar contraseña
+                </span>
+              </p>
             </div>
           </Box>
           <div />
