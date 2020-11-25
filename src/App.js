@@ -46,7 +46,16 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={LoginContainer}></Route>
+        <Route path="/" exact component={LoginContainer}></Route>
+        <Route path="/Resumen" component={LoginContainer}></Route>
+        <Route path="/IngresoReclamos" component={LoginContainer}></Route>
+        <Route path="/SeguimientosReclamos" component={LoginContainer}></Route>
+        <Route path="/Proveedores" component={LoginContainer}></Route>
+        <Route path="/Comunicaciones" component={LoginContainer}></Route>
+        <Route path="/ComunicacionesRevisar" component={LoginContainer}></Route>
+        <Route path="/ReportesProveedores" component={LoginContainer}></Route>
+        <Route path="/ReportesGYM" component={LoginContainer}></Route>
+        <Route path="/GestorDocumental" component={LoginContainer}></Route>
       </Switch>
     </Router>
   );
