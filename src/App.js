@@ -6,6 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 import LoginContainer from "./container/LoginContainer";
+import Comunicaciones from "./container/Comunicaciones";
 import "./App.css";
 import MainLayout from "./components/layout/MainLayout";
 
@@ -47,7 +48,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" component={LoginContainer}></Route>
-        <Route path="/Resumen" component={LoginContainer}></Route>
+        <Route path="/Resumen" component={Comunicaciones}></Route>
         <Route path="/IngresoReclamos" component={LoginContainer}></Route>
         <Route path="/SeguimientosReclamos" component={LoginContainer}></Route>
         <Route path="/Proveedores" component={LoginContainer}></Route>
