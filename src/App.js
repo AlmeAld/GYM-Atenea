@@ -7,6 +7,12 @@ import {
 } from "react-router-dom";
 import LoginContainer from "./container/LoginContainer";
 import Comunicaciones from "./container/Comunicaciones";
+import IngresoReclamo from "./container/IngresoReclamo";
+import Proveedores from "./container/Proveedores";
+import Reportesproveedores from "./container/Reporteproveedores";
+import ReportesGYM from "./container/ReportesGYM";
+import ResumenContainer from "./container/Resumen";
+
 import "./App.css";
 import MainLayout from "./components/layout/MainLayout";
 
@@ -48,14 +54,14 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" component={LoginContainer}></Route>
-        <Route path="/Resumen" component={Comunicaciones}></Route>
-        <Route path="/IngresoReclamos" component={LoginContainer}></Route>
+        <Route path="/Resumen" component={ResumenContainer}></Route>
+        <Route path="/IngresoReclamos" component={IngresoReclamo}></Route>
         <Route path="/SeguimientosReclamos" component={LoginContainer}></Route>
-        <Route path="/Proveedores" component={LoginContainer}></Route>
-        <Route path="/Comunicaciones" component={LoginContainer}></Route>
-        <Route path="/ComunicacionesRevisar" component={LoginContainer}></Route>
-        <Route path="/ReportesProveedores" component={LoginContainer}></Route>
-        <Route path="/ReportesGYM" component={LoginContainer}></Route>
+        <Route path="/Proveedores" component={Proveedores}></Route>
+        <Route path="/Comunicaciones" component={Comunicaciones}></Route>
+        <Route path="/ComunicacionesRevisar" component={Comunicaciones}></Route>
+        <Route path="/ReportesProveedores" component={Reportesproveedores}></Route>
+        <Route path="/ReportesGYM" component={ReportesGYM}></Route>
         <Route path="/GestorDocumental" component={LoginContainer}></Route>
       </Switch>
     </Router>
