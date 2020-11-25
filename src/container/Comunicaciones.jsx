@@ -1,5 +1,5 @@
 import React from "react";
-import "./.scss";
+import "./comunicaciones.scss";
 
 function Comunicaciones() {
     

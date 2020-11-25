@@ -1,5 +1,5 @@
 import React from "react";
-import "./.scss";
+import "./ingresoReclamo.scss";
 
 function IngresoReclamo() {
   return <div className="prueba">loginContainer</div>;

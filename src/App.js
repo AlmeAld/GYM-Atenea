@@ -9,7 +9,7 @@ import LoginContainer from "./container/LoginContainer";
 import Comunicaciones from "./container/Comunicaciones";
 import IngresoReclamo from "./container/IngresoReclamo";
 import Proveedores from "./container/Proveedores";
-import Reportesproveedores from "./container/Reporteproveedores";
+import Reportesproveedores from "./container/ReporteProveedores";
 import ReportesGYM from "./container/ReportesGYM";
 import ResumenContainer from "./container/Resumen";
 
