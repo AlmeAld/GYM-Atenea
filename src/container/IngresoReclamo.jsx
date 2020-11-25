@@ -3,12 +3,7 @@ import "./ingresoReclamo.scss";
 import MainLayout from "../components/layout/MainLayout"
 
 function IngresoReclamo() {
-  return <MainLayout><div className="prueba"> Resumen container
-    </div>;
-
-
-  </MainLayout>;
-
+  return <div className="prueba">ingresoReclamo</div>;
 }
 
 export default IngresoReclamo;
