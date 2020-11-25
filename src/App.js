@@ -11,7 +11,7 @@ import IngresoReclamo from "./container/IngresoReclamo";
 import Proveedores from "./container/Proveedores";
 import Reportesproveedores from "./container/ReporteProveedores";
 import ReportesGYM from "./container/ReportesGYM";
-import ResumenContainer from "./container/Resumen";
+import ResumenContainer from "./container/ResumenContainer";
 
 import "./App.css";
 import MainLayout from "./components/layout/MainLayout";
@@ -48,24 +48,39 @@ function NonLoggedInRoute({ children, isUserLoggedIn, ...rest }) {
 
 function App() {
   // este estado es para saber si el usuario inició sesión o no y de acuerdo a eso lo va a redireccionar segun la ruta que corresponda
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true);
 
   return (
     <Router>
       <Switch>
-        <Route path="/" component={LoginContainer}></Route>
-        <Route path="/Resumen" component={ResumenContainer}></Route>
-        <Route path="/IngresoReclamos" component={IngresoReclamo}></Route>
-        <Route path="/SeguimientosReclamos" component={LoginContainer}></Route>
-        <Route path="/Proveedores" component={Proveedores}></Route>
-        <Route path="/Comunicaciones" component={Comunicaciones}></Route>
-        <Route path="/ComunicacionesRevisar" component={Comunicaciones}></Route>
-        <Route
-          path="/ReportesProveedores"
-          component={Reportesproveedores}
-        ></Route>
-        <Route path="/ReportesGYM" component={ReportesGYM}></Route>
-        <Route path="/GestorDocumental" component={LoginContainer}></Route>
+        <Route exact path="/">
+          <LoginContainer />
+        </Route>
+        <Route path="/Resumen">
+          <ResumenContainer />
+        </Route>
+        <Route path="/IngresoReclamos">
+          <IngresoReclamo />
+        </Route>
+        <Route path="/SeguimientosReclamos">
+          <LoginContainer />
+        </Route>
+        <Route path="/Proveedores">
+          <Proveedores />
+        </Route>
+        <Route path="/Comunicaciones">
+          <Comunicaciones />
+        </Route>
+        <Route path="/ComunicacionesRevisar">
+          <Comunicaciones />
+        </Route>
+        <Route path="/ReportesProveedores">
+          <Reportesproveedores />
+        </Route>
+        <Route path="/ReportesGYM">
+          <ReportesGYM />
+        </Route>
+        {/* <Route path="/GestorDocumental" component={LoginContainer}></Route> */}
       </Switch>
     </Router>
   );
