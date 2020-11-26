@@ -6,32 +6,23 @@ import TextField from "@material-ui/core/TextField";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import Button from "@material-ui/core/Button";
-import SaveIcon from "@material-ui/icons/Save";
-import StarBorder from "@material-ui/icons/StarBorder";
 
-import Collapse from "@material-ui/core/Collapse";
-//import ListSubheader from "@material-ui/core/ListSubheader";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-//import StarBorder from '@material-ui/icons/StarBorder';
 
 const buttonStyle = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
     width: 400,
+    height:40,
   },
 }));
 const buttonStylePurple = makeStyles((theme) => ({
   button: {
     marginTop: 400,
-    width: 400,
+    width: 256,
+    height:40,
     background: "#6E3CD2",
+    marginLeft: 150,
   },
 }));
 
@@ -67,19 +58,25 @@ const textArea = makeStyles({
   },
 });
 
+const buttonStyleCategory = makeStyles((theme) => ({
+  button: {
+    width: 256,
+    height:40,
+    background: "#E5E5E5",
+    color: "000000",
+  },
+}));
+
+
 function IngresoReclamo() {
   const classesGrid = gridStyles();
   const classes = useStyles();
   const classesDos = textArea();
   const classesButton = buttonStyle();
   const classesButtonPurple = buttonStylePurple();
-  const botonesBarra = botonesBarraStyle();
+  const categoryButton= buttonStyleCategory();
 
-  const [open, setOpen] = React.useState(true);
 
-  const handleClick = () => {
-    setOpen(!open);
-  };
 
   return (
     <MainLayout>
@@ -87,6 +84,16 @@ function IngresoReclamo() {
         <Grid container>
           <div className="barra">
             <h1>Ingreso de Datos </h1>
+            <Button
+                variant="contained"
+                color="primary"
+                size="small"
+                className={categoryButton.button}
+              >
+                Categoria
+              </Button>
+
+
           </div>
           <Grid item md={6}>
             <form>
