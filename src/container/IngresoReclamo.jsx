@@ -184,7 +184,7 @@ function IngresoReclamo() {
               <TextareaAutosize
                 aria-label="minimum height"
                 rowsMin={10}
-                placeholder="Minimum 3 rows"
+                placeholder="Resumen reclamo"
                 className={classesDos.root}
               />
               <Button
