@@ -18,8 +18,10 @@ const buttonStyle = makeStyles((theme) => ({
 const buttonStylePurple = makeStyles((theme) => ({
   button: {
     marginTop: 400,
-    width: 400,
+    width: 256,
+    height:40,
     background: "#6E3CD2",
+    marginLeft: 150,
   },
 }));
 
