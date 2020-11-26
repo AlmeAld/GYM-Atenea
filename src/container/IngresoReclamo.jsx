@@ -37,6 +37,7 @@ const buttonStylePurple = makeStyles((theme) => ({
 const gridStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 31,
+    marginLeft: 100
   },
 }));
 
