@@ -7,10 +7,10 @@
 .MuiTable-root {
   width: 100%;
   display: table;
-  padding: 0.5rem;
+  padding: 16px 12px;
   -webkit-border-vertical-spacing: 2rem;
   border-collapse: separate;
-  border: 1px solid #cdcdcd;
+  border: none !important;
 }
 
 .MuiBox-root-6 {
@@ -18,23 +18,24 @@
 }
 
 .MuiTableCell-head {
+  // border: none;
   width: 200px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-// .MuiTableRow-head {
-//   text-align: center;
-// }
+.MuiTableRow-head {
+  text-align: center;
+}
 
-.MuiTabs-scroller {
-  background: $DarkGrey;
-  color: $white;
-}
-.MuiTabs-flexContainer {
-  justify-content: space-evenly;
-}
+// .MuiTabs-scroller {
+//   background: $Morado;
+//   color: $Blanco;
+// }
+// .MuiTabs-flexContainer {
+//   justify-content: space-evenly;
+// }
 
 button {
   border: none;
@@ -46,8 +47,8 @@ button {
   // margin: 0 2rem;
 }
 .profile:hover {
-  background-color: $Morado;
-  color: $Blanco;
+  background-color: $Gris-Claro;
+  color: $Negro;
   cursor: pointer;
 }
 
