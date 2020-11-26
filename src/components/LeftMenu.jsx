@@ -17,6 +17,7 @@ import StarBorder from "@material-ui/icons/StarBorder";
 import MailIcon from "@material-ui/icons/Mail";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 // estilos de ejemplo ya estoy revisando la documentacion para hacerlos con sass
