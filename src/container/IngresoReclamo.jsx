@@ -6,20 +6,8 @@ import TextField from "@material-ui/core/TextField";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import Button from "@material-ui/core/Button";
-import SaveIcon from "@material-ui/icons/Save";
-import StarBorder from "@material-ui/icons/StarBorder";
 
-import Collapse from "@material-ui/core/Collapse";
-//import ListSubheader from "@material-ui/core/ListSubheader";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-//import StarBorder from '@material-ui/icons/StarBorder';
 
 const buttonStyle = makeStyles((theme) => ({
   button: {
