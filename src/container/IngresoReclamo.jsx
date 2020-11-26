@@ -1,4 +1,5 @@
 import React from "react";
+import download from "../assets/icons/download.svg";
 import "./ingresoReclamo.scss";
 import MainLayout from "../components/layout/MainLayout";
 import TextField from "@material-ui/core/TextField";
@@ -37,7 +38,7 @@ const buttonStylePurple = makeStyles((theme) => ({
 const gridStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 31,
-    marginLeft: 100
+    marginLeft: 100,
   },
 }));
 
@@ -190,18 +191,18 @@ function IngresoReclamo() {
                 variant="contained"
                 color="default"
                 className={classesButton.button}
-                startIcon={<CloudUploadIcon />}
               >
                 Cargar Contrato
+                <img src={download} alt="" />
               </Button>
 
               <Button
                 variant="contained"
                 color="default"
                 className={classesButton.button}
-                startIcon={<CloudUploadIcon />}
               >
                 Cargar antecedentes
+                <img src={download} alt="" />
               </Button>
             </div>
             <div>
@@ -210,9 +211,8 @@ function IngresoReclamo() {
                 color="primary"
                 size="small"
                 className={classesButtonPurple.button}
-                startIcon={<SaveIcon />}
               >
-                Save
+                Guardar
               </Button>
             </div>
           </Grid>

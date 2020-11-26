@@ -15,19 +15,19 @@ import { Container } from "@material-ui/core";
 const data = [
   {
     name: "Setiembre",
-    uv: 4000,
+    uv: 1500,
     pv: 2400,
     amt: 2400,
   },
   {
     name: "Octubre",
-    uv: 3000,
+    uv: 4000,
     pv: 1398,
     amt: 2210,
   },
   {
     name: "Noviembre",
-    uv: 2000,
+    uv: 2800,
     pv: 9800,
     amt: 2290,
   },

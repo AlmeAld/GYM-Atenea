@@ -12,6 +12,7 @@ import Proveedores from "./container/Proveedores";
 import Reportesproveedores from "./container/ReporteProveedores";
 import ReportesGYM from "./container/ReportesGYM";
 import ResumenContainer from "./container/ResumenContainer";
+import SeguimientoReclamoContainer from "./container/SeguimientoReclamoContainer";
 
 import "./App.css";
 import MainLayout from "./components/layout/MainLayout";
@@ -63,7 +64,7 @@ function App() {
           <IngresoReclamo />
         </Route>
         <Route path="/SeguimientosReclamos">
-          <LoginContainer />
+          <SeguimientoReclamoContainer />
         </Route>
         <Route path="/Proveedores">
           <Proveedores />
