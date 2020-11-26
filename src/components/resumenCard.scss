@@ -3,21 +3,48 @@
 @import "../variablesColores";
 * {
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-.MuiCard-root {
-  border: 2px solid #6e3cd1;
-  .details {
-    display: flex;
-    background-color: $Gris-Claro;
-    border-top: 2px solid $Morado;
-    .date {
-      color: $Morado;
-      font-family: "Roboto", sans-serif;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 16, 41px;
-      margin-right: 8px;
+.content-resumen {
+  margin-top: 86px;
+  .MuiCard-root {
+    border: 2px solid #6e3cd1;
+    width: 424px;
+    .card-header {
+      padding: 22px 35px;
+    }
+    .details {
+      display: flex;
+      background-color: $Gris-Claro;
+      border-top: 2px solid $Morado;
+      padding: 0 21px;
+      .date {
+        color: $Morado;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16, 41px;
+        margin-right: 8px;
+      }
+      .text {
+        color: $Gris-Medio;
+        font-weight: 400;
+        font-size: 14px;
+      }
     }
   }
+  .update-title {
+    font-size: 20px;
+    color: $Gris-Medio;
+    margin-left: 15px;
+  }
+  .count {
+    color: red;
+    font-size: 32px;
+    margin: 0;
+    margin-top: 11px;
+  }
 }
+
+// width: 441px;
