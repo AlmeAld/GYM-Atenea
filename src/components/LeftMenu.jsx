@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     overflowX: "hidden",
     width: theme.spacing(7) + 1,
     [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9) + 1,
+      width: theme.spacing(6.3) + 1,
     },
     logo:{
       display:"none"
@@ -114,6 +114,7 @@ console.log(listOpen)
 
       <Divider />
       <List>
+      
         <ListItem button>
           <ListItemIcon id="icon">
             <AssessmentIcon />
@@ -126,7 +127,7 @@ console.log(listOpen)
         </ListItemIcon>
         <ListItemText primary="Reclamos" />
         {listOpen ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
+        </ListItem>
       <Collapse in={listOpen} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItem button 
@@ -239,6 +240,7 @@ console.log(listOpen)
           allowtransparency="true"
           allow="encrypted-media"
         /> */}
+        
       </div>
     </Drawer>
   );
