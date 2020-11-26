@@ -13,10 +13,14 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
-import StarBorder from '@material-ui/icons/StarBorder';
+import AnnouncementIcon from '@material-ui/icons/Announcement';
+import AssessmentIcon from '@material-ui/icons/Assessment';
 import MailIcon from '@material-ui/icons/Mail';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
+import FolderIcon from '@material-ui/icons/Folder';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import AssignmentIcon from '@material-ui/icons/Assignment';
 
 const drawerWidth = 240;
 // estilos de ejemplo ya estoy revisando la documentacion para hacerlos con sass
@@ -40,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     color:'white'
   },
   nested: {
-    paddingLeft: theme.spacing(4),
+    paddingLeft: theme.spacing(2),
   },
   drawerOpen: {
     width: drawerWidth,
@@ -63,20 +67,29 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: theme.spacing(9) + 1,
     },
+    logo:{
+      display:"none"
+    }
   },
   logoSpotify:{
     width:40
+  },
+  subtext:{
+    fontSize:0.8
   }
  }));
 
 function LeftMenu(props) {
   const classes = useStyles();
   const [listOpen, setListOpen] = React.useState(false);
+  const handleClick = () => {setListOpen(!listOpen)};
+  const [listOpenOne, setListOpenOne] = React.useState(false);
+  const handleClickOne = () => {setListOpenOne(!listOpenOne)};
+  const [listOpenTwo, setListOpenTwo] = React.useState(false);
+  const handleClickTwo = () => {setListOpenTwo(!listOpenTwo)};
 
-  const handleClick = () => {
-    setListOpen(!listOpen);
-  };
   const theme = useTheme();
+console.log(listOpen)
   return (
     <Drawer
       variant="permanent"
@@ -104,14 +117,14 @@ function LeftMenu(props) {
       <List>
       <ListItem button>
           <ListItemIcon id="icon">
-            <InboxIcon />
+            <AssessmentIcon />
           </ListItemIcon>
             <ListItemText primary={"Resumen"} />
           </ListItem>
 
-          <ListItem button onClick={handleClick}>
+          <ListItem className="list-drop" button onClick={handleClick}>
         <ListItemIcon id="icon">
-          <InboxIcon />
+          <AnnouncementIcon />
         </ListItemIcon>
         <ListItemText primary="Reclamos" />
         {listOpen ? <ExpandLess /> : <ExpandMore />}
@@ -122,9 +135,9 @@ function LeftMenu(props) {
           // className={classes.nested}
           >
             <ListItemIcon id="icon">
-              <StarBorder />
+              
             </ListItemIcon>
-            <ListItemText primary="Ingresar reclamo" />
+            <ListItemText className={classes.subtext} primary="Ingresar reclamo" />
           </ListItem>
         </List>
         <List component="div" disablePadding>
@@ -132,7 +145,7 @@ function LeftMenu(props) {
           // className={classes.nested}
           >
             <ListItemIcon id="icon">
-              <StarBorder />
+              
             </ListItemIcon>
             <ListItemText primary="Seguimiento reclamo" />
           </ListItem>
@@ -141,25 +154,25 @@ function LeftMenu(props) {
 
       <ListItem button>
           <ListItemIcon id="icon">
-            <InboxIcon />
+            <PeopleAltIcon />
           </ListItemIcon>
             <ListItemText primary={"Proveedores"} />
           </ListItem>
 
-          <ListItem button onClick={handleClick}>
+          <ListItem className="list-drop" button onClick={handleClickOne}>
         <ListItemIcon id="icon">
           <MailIcon clasName="icon-side-menu" />
         </ListItemIcon>
         <ListItemText primary="Chat interno" />
-        {listOpen ? <ExpandLess /> : <ExpandMore />}
+        {listOpenOne? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      <Collapse in={listOpen} timeout="auto" unmountOnExit>
+      <Collapse in={listOpenOne} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItem button 
           // className={classes.nested}
           >
             <ListItemIcon id="icon">
-              <StarBorder />
+              
             </ListItemIcon>
             <ListItemText primary="Firma por defecto" />
           </ListItem>
@@ -169,7 +182,7 @@ function LeftMenu(props) {
           // className={classes.nested}
           >
             <ListItemIcon id="icon">
-              <StarBorder />
+              
             </ListItemIcon>
             <ListItemText primary="Texto Legal" />
           </ListItem>
@@ -177,25 +190,25 @@ function LeftMenu(props) {
         <List component="div" disablePadding>
           <ListItem button >
             <ListItemIcon id="icon">
-              <StarBorder />
+              
             </ListItemIcon>
             <ListItemText primary="Nueva comunicación" />
           </ListItem>
         </List>
       </Collapse>
 
-      <ListItem button onClick={handleClick}>
+      <ListItem className="list-drop" button onClick={handleClickTwo}>
         <ListItemIcon id="icon">
-          <InboxIcon />
+          <AssignmentIcon />
         </ListItemIcon>
         <ListItemText primary="Reportes" />
-        {listOpen ? <ExpandLess /> : <ExpandMore />}
+        {listOpenTwo ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      <Collapse in={listOpen} timeout="auto" unmountOnExit>
+      <Collapse in={listOpenTwo} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItem button >
             <ListItemIcon id="icon">
-              <StarBorder />
+              
             </ListItemIcon>
             <ListItemText primary="Proveedor--GYM" />
           </ListItem>
@@ -203,7 +216,7 @@ function LeftMenu(props) {
         <List component="div" disablePadding>
           <ListItem button >
             <ListItemIcon id="icon">
-              <StarBorder />
+              
             </ListItemIcon>
             <ListItemText primary="GYM--Proveedor" />
           </ListItem>
@@ -212,7 +225,7 @@ function LeftMenu(props) {
 
       <ListItem button>
           <ListItemIcon id="icon">
-            <InboxIcon />
+            <FolderIcon />
           </ListItemIcon>
             <ListItemText primary={"Gestor documental"} />
           </ListItem>     
