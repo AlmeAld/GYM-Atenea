@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { listenAllDocs } from "../API/crud";
 import user from "../assets/icons/user.svg";
+import "./tableReclamo.scss";
 // import Badge from "./Badge";
 // import "./ClientTable.scss";
 // import headerColumn from "../API/headerTable";
