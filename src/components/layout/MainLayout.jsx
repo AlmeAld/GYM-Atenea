@@ -6,10 +6,10 @@ import TopBar from "../TopBar";
 
 function MainLayout({ children }) {
   return (
-    <main>
+    <main className="main">
       <LefMenu />
       <TopBar />
-      <Container>{children}</Container>
+      <Container className="main-content">{children}</Container>
     </main>
   );
 }

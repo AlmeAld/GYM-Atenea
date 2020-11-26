@@ -6,10 +6,11 @@ import ResumenCard from "../components/ResumenCard";
 
 function ResumenContainer() {
   return (
-    <MainLayout className="prueba">
-      <p>ResumenContainer</p>
-      <DashboardContent />
-      <ResumenCard />
+    <MainLayout>
+      <div className="container">
+        <DashboardContent />
+        <ResumenCard />
+      </div>
     </MainLayout>
   );
 }
