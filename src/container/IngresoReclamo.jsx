@@ -1,4 +1,5 @@
 import React from "react";
+import download from "../assets/icons/download.svg";
 import "./ingresoReclamo.scss";
 import MainLayout from "../components/layout/MainLayout";
 import TextField from "@material-ui/core/TextField";
@@ -8,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
-import StarBorder from '@material-ui/icons/StarBorder';
+import StarBorder from "@material-ui/icons/StarBorder";
 
 import Collapse from "@material-ui/core/Collapse";
 //import ListSubheader from "@material-ui/core/ListSubheader";
@@ -37,6 +38,7 @@ const buttonStylePurple = makeStyles((theme) => ({
 const gridStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 31,
+    marginLeft: 100,
   },
 }));
 
@@ -47,7 +49,7 @@ const botonesBarraStyle = makeStyles((theme) => ({
   },
   nested: {
     paddingLeft: theme.spacing(4),
-  }
+  },
 }));
 
 const useStyles = makeStyles({
@@ -56,7 +58,6 @@ const useStyles = makeStyles({
     height: 30,
     margin: 18,
   },
-  
 });
 const textArea = makeStyles({
   root: {
@@ -82,7 +83,6 @@ function IngresoReclamo() {
 
   return (
     <MainLayout>
-      <div className="prueba">ingreso A Reclamo </div>;
       <div className={classesGrid.root}>
         <Grid container>
           <div className="barra">
@@ -191,18 +191,18 @@ function IngresoReclamo() {
                 variant="contained"
                 color="default"
                 className={classesButton.button}
-                startIcon={<CloudUploadIcon />}
               >
                 Cargar Contrato
+                <img src={download} alt="" />
               </Button>
 
               <Button
                 variant="contained"
                 color="default"
                 className={classesButton.button}
-                startIcon={<CloudUploadIcon />}
               >
                 Cargar antecedentes
+                <img src={download} alt="" />
               </Button>
             </div>
             <div>
@@ -211,9 +211,8 @@ function IngresoReclamo() {
                 color="primary"
                 size="small"
                 className={classesButtonPurple.button}
-                startIcon={<SaveIcon />}
               >
-                Save
+                Guardar
               </Button>
             </div>
           </Grid>

@@ -21,50 +21,50 @@ import Divider from '@material-ui/core/Divider';
 import FolderIcon from '@material-ui/icons/Folder';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import AssignmentIcon from '@material-ui/icons/Assignment';
-
+import { Link } from "react-router-dom";
 const drawerWidth = 240;
 // estilos de ejemplo ya estoy revisando la documentacion para hacerlos con sass
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: "flex",
   },
-   menuButton: {
+  menuButton: {
     marginRight: 36,
   },
   hide: {
-    display: 'none',
+    display: "none",
   },
   drawer: {
     width: drawerWidth,
-    backgroundColor: 'black',
+    backgroundColor: "black",
     flexShrink: 0,
-    whiteSpace: 'nowrap',
+    whiteSpace: "nowrap",
   },
-  ListItemText:{
-    color:'white'
+  ListItemText: {
+    color: "white",
   },
   nested: {
     paddingLeft: theme.spacing(2),
   },
   drawerOpen: {
     width: drawerWidth,
-    backgroundColor: 'black',
-    color: 'white',
-    transition: theme.transitions.create('width', {
+    backgroundColor: "black",
+    color: "white",
+    transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
   drawerClose: {
-    backgroundColor: 'black',
-    color: 'white',
-    transition: theme.transitions.create('width', {
+    backgroundColor: "black",
+    color: "white",
+    transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    overflowX: 'hidden',
+    overflowX: "hidden",
     width: theme.spacing(7) + 1,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       width: theme.spacing(9) + 1,
     },
     logo:{
@@ -104,24 +104,22 @@ console.log(listOpen)
         }),
       }}
     >
-      <div 
+      <div
       // className={classes.toolbar}
       >
         <div onClick={props.handleDrawerClose} className="logo-cont">
-         <img src={Logo} alt="" className="logo"/>
-
+          <img src={Logo} alt="" className="logo" />
         </div>
       </div>
-      
+
       <Divider />
       <List>
-      <ListItem button>
+        <ListItem button>
           <ListItemIcon id="icon">
             <AssessmentIcon />
           </ListItemIcon>
-            <ListItemText primary={"Resumen"} />
-          </ListItem>
-
+          <ListItemText primary={"Resumen"} />
+        </ListItem>
           <ListItem className="list-drop" button onClick={handleClick}>
         <ListItemIcon id="icon">
           <AnnouncementIcon />
@@ -152,13 +150,12 @@ console.log(listOpen)
         </List>
       </Collapse>
 
-      <ListItem button>
+        <ListItem button>
           <ListItemIcon id="icon">
             <PeopleAltIcon />
           </ListItemIcon>
-            <ListItemText primary={"Proveedores"} />
-          </ListItem>
-
+          <ListItemText primary={"Proveedores"} />
+        </ListItem>
           <ListItem className="list-drop" button onClick={handleClickOne}>
         <ListItemIcon id="icon">
           <MailIcon clasName="icon-side-menu" />
@@ -223,16 +220,25 @@ console.log(listOpen)
         </List>
       </Collapse>
 
-      <ListItem button>
+        <ListItem button>
           <ListItemIcon id="icon">
             <FolderIcon />
           </ListItemIcon>
-            <ListItemText primary={"Gestor documental"} />
-          </ListItem>     
+          <ListItemText primary={"Gestor documental"} />
+        </ListItem>
       </List>
       <Divider />
       <div className="divLogo">
-       <img src={SpotifyLogo} alt="" className={classes.logoSpotify} />
+        <img src={SpotifyLogo} alt="" className={classes.logoSpotify} />
+        {/* <iframe
+          src="https://open.spotify.com/embed/playlist/4xJOCBqKbD4u9Q55QMxrrc"
+          width="300"
+          title="spotify"
+          height="380"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media"
+        /> */}
       </div>
     </Drawer>
   );

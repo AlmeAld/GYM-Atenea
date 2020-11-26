@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   title: {
+    marginTop:6,
     color:' rgba(110, 60, 210, 1)',
     display: 'none',
     [theme.breakpoints.up('sm')]: {
@@ -78,6 +79,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  icon:{
+    color:'black'
+  }
 }));
 
 function TopBar() {
@@ -144,7 +148,7 @@ function TopBar() {
         </IconButton>
           <IconButton aria-label="show 17 new notifications"  className="icon-nav" >
             <Badge badgeContent={17} color="secondary">
-              <NotificationsIcon />
+              <NotificationsIcon className={classes.icon}/>
             </Badge>
           </IconButton>
         <div className={classes.grow} />
@@ -160,7 +164,7 @@ function TopBar() {
             onClick={handleProfileMenuOpen}
             className="icon-nav"
           >
-            <AccountCircle />
+            <AccountCircle id="avatar"className={classes.icon} />
           </IconButton>
         </div>
       </Toolbar>
