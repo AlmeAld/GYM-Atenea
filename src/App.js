@@ -77,7 +77,7 @@ function App() {
         <Route path="/ReportesProveedores">
           <Reportesproveedores />
         </Route>
-        <Route path="/ReportesGYM">
+        <Route path="/Reclamos">
           <ReportesGYM />
         </Route>
         {/* <Route path="/GestorDocumental" component={LoginContainer}></Route> */}
