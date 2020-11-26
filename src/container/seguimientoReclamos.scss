@@ -1,1 +1,9 @@
-@import '../variablesColores'
+@import "../variablesColores";
+
+* {
+  box-sizing: border-box;
+}
+
+.content-table {
+  margin-top: 100px;
+}
