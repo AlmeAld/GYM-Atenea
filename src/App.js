@@ -13,7 +13,7 @@ import Reportesproveedores from "./container/ReporteProveedores";
 import Reclamos from "./container/Reclamos";
 import ResumenContainer from "./container/ResumenContainer";
 import SeguimientoReclamoContainer from "./container/SeguimientoReclamoContainer";
-
+import Archivo from "./container/ArchivoPDF";
 import "./App.css";
 import MainLayout from "./components/layout/MainLayout";
 
@@ -80,6 +80,9 @@ function App() {
         </Route>
         <Route path="/Reclamos">
           <Reclamos />
+        </Route>
+        <Route path="/Archivo">
+          <Archivo />
         </Route>
         {/* <Route path="/GestorDocumental" component={LoginContainer}></Route> */}
       </Switch>

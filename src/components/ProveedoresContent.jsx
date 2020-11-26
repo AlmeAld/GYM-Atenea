@@ -5,15 +5,29 @@ import download from "../assets/icons/download.svg";
 import Button from "@material-ui/core/Button";
 import Box from '@material-ui/core/Box';
 import Company from '../assets/icons/company.svg'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+//import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Grid from "@material-ui/core/Grid";
 import './proveedoresContent.scss'
+import MyDocument from './MyDocument';
+
+//import ReactDOM from 'react-dom';
+import { PDFViewer } from '@react-pdf/renderer';
+//import ReactPDF from '@react-pdf/renderer';
+ 
+
+
+
 
 
 export default function FixedContainer() {
     
-
-
+  //const App = () => (
+  //  <PDFViewer>
+  //    <MyDocument />
+  //  </PDFViewer>
+  //);
+  //ReactPDF.render(<MyDocument />, `${...}/example.pdf`);
+  //ReactDOM.render(<App/>);
 
   return (
     <React.Fragment>
@@ -155,6 +169,7 @@ cada 15 días."
               >
                 Descargar PDF
               </Button>
+              <div id='archivo'></div>
   </Grid>
 </Grid>
         </Box>
