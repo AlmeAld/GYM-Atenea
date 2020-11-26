@@ -10,7 +10,7 @@ import Comunicaciones from "./container/Comunicaciones";
 import IngresoReclamo from "./container/IngresoReclamo";
 import Proveedores from "./container/Proveedores";
 import Reportesproveedores from "./container/ReporteProveedores";
-import ReportesGYM from "./container/ReportesGYM";
+import Reclamos from "./container/Reclamos";
 import ResumenContainer from "./container/ResumenContainer";
 import SeguimientoReclamoContainer from "./container/SeguimientoReclamoContainer";
 
@@ -79,7 +79,7 @@ function App() {
           <Reportesproveedores />
         </Route>
         <Route path="/Reclamos">
-          <ReportesGYM />
+          <Reclamos />
         </Route>
         {/* <Route path="/GestorDocumental" component={LoginContainer}></Route> */}
       </Switch>
