@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import { Router, Route, browserHistory } from "react-router";
-import "./leftMenu.scss";
-import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import IconButton from "@material-ui/core/IconButton";
-import SpotifyLogo from "../assets/spotify.png";
-import Logo from "../assets/Logo-Regional-Blanco.png";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import ExpandLess from "@material-ui/icons/ExpandLess";
-import ExpandMore from "@material-ui/icons/ExpandMore";
-import Collapse from "@material-ui/core/Collapse";
-import StarBorder from "@material-ui/icons/StarBorder";
-import MailIcon from "@material-ui/icons/Mail";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-=======
 import React from 'react';
 import './leftMenu.scss';
 import clsx from 'clsx';
@@ -43,7 +21,6 @@ import Divider from '@material-ui/core/Divider';
 import FolderIcon from '@material-ui/icons/Folder';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import AssignmentIcon from '@material-ui/icons/Assignment';
->>>>>>> b36e9d147639b6419c9619a6b7fc0a3f1668179d
 import { Link } from "react-router-dom";
 const drawerWidth = 240;
 // estilos de ejemplo ya estoy revisando la documentacion para hacerlos con sass
@@ -137,13 +114,14 @@ console.log(listOpen)
 
       <Divider />
       <List>
-      
+      <Link to='/Resumen' className='linkClass'>
         <ListItem button>
           <ListItemIcon id="icon">
             <AssessmentIcon />
           </ListItemIcon>
            <ListItemText primary={"Resumen"} />
         </ListItem>
+        </Link>
           <ListItem className="list-drop" button onClick={handleClick}>
         <ListItemIcon id="icon">
           <AnnouncementIcon />
@@ -153,6 +131,8 @@ console.log(listOpen)
         </ListItem>
       <Collapse in={listOpen} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
+
+        <Link to='/IngresoReclamos' className='linkClass'>
           <ListItem button 
           // className={classes.nested}
           >
@@ -161,8 +141,10 @@ console.log(listOpen)
             </ListItemIcon>
             <ListItemText className={classes.subtext} primary="Ingresar reclamo" />
           </ListItem>
+          </Link>
         </List>
         <List component="div" disablePadding>
+        <Link to='/SeguimientosReclamos' className='linkClass'>
           <ListItem button 
           // className={classes.nested}
           >
@@ -171,15 +153,18 @@ console.log(listOpen)
             </ListItemIcon>
             <ListItemText primary="Seguimiento reclamo" />
           </ListItem>
+          </Link>
         </List>
       </Collapse>
 
+      <Link to='/Proveedores' className='linkClass'>
         <ListItem button>
           <ListItemIcon id="icon">
             <PeopleAltIcon />
           </ListItemIcon>
           <ListItemText primary={"Proveedores"} />
         </ListItem>
+        </Link>
           <ListItem className="list-drop" button onClick={handleClickOne}>
         <ListItemIcon id="icon">
           <MailIcon clasName="icon-side-menu" />
@@ -189,6 +174,7 @@ console.log(listOpen)
       </ListItem>
       <Collapse in={listOpenOne} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
+        <Link to='/Comunicaciones' className='linkClass'>
           <ListItem button 
           // className={classes.nested}
           >
@@ -197,8 +183,10 @@ console.log(listOpen)
             </ListItemIcon>
             <ListItemText primary="Firma por defecto" />
           </ListItem>
+        </Link>
         </List>
         <List component="div" disablePadding>
+        <Link to='/Comunicaciones' className='linkClass'>
           <ListItem button 
           // className={classes.nested}
           >
@@ -207,14 +195,18 @@ console.log(listOpen)
             </ListItemIcon>
             <ListItemText primary="Texto Legal" />
           </ListItem>
+          </Link>
         </List>
+        
         <List component="div" disablePadding>
+        <Link to='/Comunicaciones' className='linkClass'>
           <ListItem button >
             <ListItemIcon id="icon">
               
             </ListItemIcon>
             <ListItemText primary="Nueva comunicación" />
           </ListItem>
+          </Link>
         </List>
       </Collapse>
 
@@ -227,20 +219,24 @@ console.log(listOpen)
       </ListItem>
       <Collapse in={listOpenTwo} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
+        <Link to='/ReportesProveedores' className='linkClass'>
           <ListItem button >
             <ListItemIcon id="icon">
               
             </ListItemIcon>
             <ListItemText primary="Proveedor--GYM" />
           </ListItem>
+          </Link>
         </List>
         <List component="div" disablePadding>
+        <Link to='/ReportesProveedores' className='linkClass'>
           <ListItem button >
             <ListItemIcon id="icon">
               
             </ListItemIcon>
             <ListItemText primary="GYM--Proveedor" />
           </ListItem>
+          </Link>
         </List>
       </Collapse>
 

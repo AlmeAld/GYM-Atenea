@@ -13,6 +13,7 @@ const buttonStyle = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
     width: 400,
+    height:40,
   },
 }));
 const buttonStylePurple = makeStyles((theme) => ({
@@ -57,19 +58,25 @@ const textArea = makeStyles({
   },
 });
 
+const buttonStyleCategory = makeStyles((theme) => ({
+  button: {
+    width: 256,
+    height:40,
+    background: "#E5E5E5",
+    color: "000000",
+  },
+}));
+
+
 function IngresoReclamo() {
   const classesGrid = gridStyles();
   const classes = useStyles();
   const classesDos = textArea();
   const classesButton = buttonStyle();
   const classesButtonPurple = buttonStylePurple();
-  const botonesBarra = botonesBarraStyle();
+  const categoryButton= buttonStyleCategory();
 
-  const [open, setOpen] = React.useState(true);
 
-  const handleClick = () => {
-    setOpen(!open);
-  };
 
   return (
     <MainLayout>
@@ -77,6 +84,16 @@ function IngresoReclamo() {
         <Grid container>
           <div className="barra">
             <h1>Ingreso de Datos </h1>
+            <Button
+                variant="contained"
+                color="primary"
+                size="small"
+                className={categoryButton.button}
+              >
+                Categoria
+              </Button>
+
+
           </div>
           <Grid item md={6}>
             <form>
