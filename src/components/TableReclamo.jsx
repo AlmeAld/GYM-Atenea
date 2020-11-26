@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core/";
 import { Link } from "react-router-dom";
 import { listenAllDocs } from "../API/crud";
+import user from "../assets/icons/user.svg";
 // import Badge from "./Badge";
 // import "./ClientTable.scss";
 // import headerColumn from "../API/headerTable";
@@ -95,7 +96,14 @@ function TableReclamo() {
                   <TableCell>
                     {/* <Badge name={row.status} className={row.status} /> */}
                   </TableCell>
-                  <TableCell>{row.proveedor}</TableCell>
+                  <TableCell>
+                    <Link to={`/SeguimientosReclamos:${row.id}`}>
+                      <button type="button" className="profile">
+                        <img src={user} alt="" />
+                        {row.proveedor}
+                      </button>
+                    </Link>
+                  </TableCell>
                   <TableCell>{row.giroComercial}</TableCell>
                   <TableCell>{row.ruc}</TableCell>
                   <TableCell>{row.tipoProveedor}</TableCell>
