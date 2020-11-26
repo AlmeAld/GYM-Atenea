@@ -1,4 +1,5 @@
 import React from "react";
+import { Router, Route, browserHistory } from "react-router";
 import "./leftMenu.scss";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -106,9 +107,8 @@ function LeftMenu(props) {
           <ListItemIcon id="icon">
             <InboxIcon />
           </ListItemIcon>
-          <ListItemText primary={"Resumen"} />
+           <ListItemText primary={"Resumen"} />
         </ListItem>
-
         <ListItem button onClick={handleClick}>
           <ListItemIcon id="icon">
             <InboxIcon />

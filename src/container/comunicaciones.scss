@@ -1,1 +1,24 @@
-@import '../variablesColores'
+
+@import '../variablesColores';
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    height: 35vh;
+    color: $Blanco;
+    margin-Top:15vh;
+    margin-bottom:1vh;
+    background: $Gris-Medio;
+    
+}
+
+
+.graphicsZone{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    width: 80vw;
+    height: 45vh;
+    background: $Gris-Medio;
+}
