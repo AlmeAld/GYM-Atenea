@@ -6,10 +6,11 @@
     justify-content: space-between;
     width: 80vw;
     height: 35vh;
-    color: $Blanco;
+    color: black;
     margin-Top:15vh;
-    margin-bottom:1vh;
-    background: $Gris-Medio;
+    margin-bottom:5vh;
+    background: $Gris-Claro;
+    padding: 3vh;
     
 }
 
@@ -17,8 +18,9 @@
 .graphicsZone{
     display: flex;
     justify-content: flex-start;
-    padding: 0;
     width: 80vw;
     height: 35vh;
-    background: $Gris-Medio;
+    background: $Gris-Claro;
+    color: black;
+    padding: 3vh;
 }
