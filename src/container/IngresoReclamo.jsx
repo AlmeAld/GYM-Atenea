@@ -32,15 +32,15 @@ const gridStyles = makeStyles((theme) => ({
   },
 }));
 
-const botonesBarraStyle = makeStyles((theme) => ({
-  button: {
-    width: 200,
-    background: "#E5E5E5",
-  },
-  nested: {
-    paddingLeft: theme.spacing(4),
-  },
-}));
+// const botonesBarraStyle = makeStyles((theme) => ({
+//   button: {
+//     width: 200,
+//     background: "#E5E5E5",
+//   },
+//   nested: {
+//     paddingLeft: theme.spacing(4),
+//   },
+// }));
 
 const useStyles = makeStyles({
   root: {

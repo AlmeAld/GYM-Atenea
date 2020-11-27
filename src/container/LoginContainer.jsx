@@ -10,7 +10,7 @@
 
 // export default LoginContainer;
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import fire from "../firebase.js";
 import { useHistory } from "react-router-dom";
 import {
@@ -45,24 +45,24 @@ const useStyles = makeStyles((theme) => ({
 
 function Login() {
   const history = useHistory();
-  const [user, setUser] = useState("");
+  // const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  // const [emailError, setEmailError] = useState("");
+  // const [passwordError, setPasswordError] = useState("");
   const [activeUser, setActiveUser] = useState(false);
 
   console.log(email, password);
 
-  const clearInputs = () => {
-    setEmail("");
-    setPassword("");
-  };
+  // const clearInputs = () => {
+  //   setEmail("");
+  //   setPassword("");
+  // };
 
-  const clearError = () => {
-    setPasswordError("");
-    setEmailError("");
-  };
+  // const clearError = () => {
+  //   setPasswordError("");
+  //   setEmailError("");
+  // };
 
   // firebase functions
   function HandleLogin(event) {
@@ -102,17 +102,17 @@ function Login() {
       .catch((err) => console.log(err));
   }
 
-  const SignOut = () => {
-    fire
-      .auth()
-      .signOut()
-      .then(function () {
-        // Sign-out successful.
-      })
-      .catch(function (error) {
-        // An error happened.
-      });
-  };
+  // const SignOut = () => {
+  //   fire
+  //     .auth()
+  //     .signOut()
+  //     .then(function () {
+  //       // Sign-out successful.
+  //     })
+  //     .catch(function (error) {
+  //       // An error happened.
+  //     });
+  // };
 
   const styles = useStyles();
 
@@ -178,7 +178,7 @@ function Login() {
                   ),
                 }}
               />
-              <span>{emailError}</span>
+              {/* <span>{emailError}</span> */}
               <TextField
                 className={styles.input}
                 id="filled-password-input"
@@ -196,7 +196,7 @@ function Login() {
                   ),
                 }}
               />
-              <span>{passwordError}</span>
+              {/* <span>{passwordError}</span> */}
             </div>
             <div>
               <Button variant="contained" color="primary" onClick={HandleLogin}>

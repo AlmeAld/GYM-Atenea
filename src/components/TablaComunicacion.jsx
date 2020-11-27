@@ -7,15 +7,12 @@ import {
   TableHead,
   TableRow,
 } from "@material-ui/core/";
-import { Link } from "react-router-dom";
 import CustomizedDialogs from "./OpenDialog";
 import { listenAllDocs } from "../API/crud";
-import user from "../assets/icons/user.svg";
 import "./tablaProveedores.scss";
 // import Badge from "./Badge";
 // import "./ClientTable.scss";
 // import headerColumn from "../API/headerTable";
-
 
 function TableComunicacion() {
   const [rowData, setRowData] = useState([]);
@@ -41,35 +38,35 @@ function TableComunicacion() {
       id: "04",
       label: "Conversación",
     },
-    
   ];
 
   return (
     <>
-
       <div className="filterZone">
         <TableContainer>
           <Table>
             <TableHead>
-            <TableRow>
+              <TableRow>
                 {headerColumn.map((column) => (
-                <TableCell key={column.id}>{column.label}</TableCell>
+                  <TableCell key={column.id}>{column.label}</TableCell>
                 ))}
-            </TableRow>
+              </TableRow>
             </TableHead>
             <TableBody>
-            {rowData.map((row) => (
+              {rowData.map((row) => (
                 <TableRow key={row.id}>
-                <TableCell>{row.proveedor}</TableCell>
-                <TableCell>{row.giroComercial}</TableCell>
-                <TableCell>{row.ruc}</TableCell>
-                <TableCell><CustomizedDialogs/></TableCell>
+                  <TableCell>{row.proveedor}</TableCell>
+                  <TableCell>{row.giroComercial}</TableCell>
+                  <TableCell>{row.ruc}</TableCell>
+                  <TableCell>
+                    <CustomizedDialogs />
+                  </TableCell>
                 </TableRow>
-            ))}
+              ))}
             </TableBody>
-        </Table>
+          </Table>
         </TableContainer>
-    </div>
+      </div>
     </>
   );
 }
