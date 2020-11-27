@@ -3,7 +3,7 @@ import "./seguimientoReclamos.scss";
 import Mainlayout from "../components/layout/MainLayout";
 import TableReclamo from "../components/TableReclamo";
 
-function SeguimientoReclamo() {
+function SeguimientoReclamoContainer() {
   return (
     <Mainlayout>
       <div className="content-table">
@@ -13,4 +13,4 @@ function SeguimientoReclamo() {
   );
 }
 
-export default SeguimientoReclamo;
+export default SeguimientoReclamoContainer;
