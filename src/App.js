@@ -15,6 +15,7 @@ import Reclamos from "./container/Reclamos";
 import ResumenContainer from "./container/ResumenContainer";
 import SeguimientoReclamoUser from "./container/SeguimientoReclamoUser";
 import SeguimientoReclamoContainer from "./container/SeguimientoReclamoContainer";
+import Archivo from "./container/ArchivoPDF";
 import Loader from "./components/Loader";
 
 import "./App.css";
@@ -117,6 +118,9 @@ function App() {
         </LoggedInRoute>
         <LoggedInRoute isUserLoggedIn={isUserLoggedIn} path="/Reclamos">
           <Reclamos />
+        </LoggedInRoute>
+        <LoggedInRoute path="/Archivo">
+          <Archivo />
         </LoggedInRoute>
         {/* <Route path="/GestorDocumental" component={LoginContainer}></Route> */}
       </Switch>

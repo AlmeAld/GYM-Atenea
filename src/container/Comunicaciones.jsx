@@ -19,11 +19,11 @@ function Comunicaciones() {
         <Grid container>
           <Grid item md={1}></Grid>
           <Grid item md={10}>
-            <div className="boxes">
-            </div>
-            <div className="graphicsZone">
+            <input className="boxes">
+            </input>
+            <input className="graphicsZone">
 
-</div>
+</input>
           </Grid>
           <Grid item md={1}></Grid>
         </Grid>
