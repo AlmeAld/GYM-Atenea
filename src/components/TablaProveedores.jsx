@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core/";
 import { listenAllDocs } from "../API/crud";
 import "./tablaProveedores.scss";
+import inhabilitado from "../assets/icons/inhabilitado.svg";
 // import Badge from "./Badge";
 // import "./ClientTable.scss";
 // import headerColumn from "../API/headerTable";
@@ -83,7 +84,10 @@ function TableReclamo() {
                   <TableCell>{row.giroComercial}</TableCell>
                   <TableCell>{row.ruc}</TableCell>
                   <TableCell>{row.tipoProveedor}</TableCell>
-                  <TableCell>{row.calificacion}</TableCell>
+                  <TableCell>
+                    {row.calificacion}
+                    <img src={inhabilitado} alt="" className="inhabilitado" />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
