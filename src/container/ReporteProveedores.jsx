@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./reporteProveedores.scss";
 import MainLayout from "../components/layout/MainLayout";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import TableReclamo from "../components/TablaProveedores";
+import Button from "@material-ui/core/Button";
 
 function RecoDetails() {
   const [empresa, setEmpresa] = useState("Todos");
@@ -37,8 +38,19 @@ const gridStyles = makeStyles((theme) => ({
   },
 }));
 
-function Reportesproveedores() {
+const buttonStylePurple = makeStyles((theme) => ({
+  button: {
+    marginTop: 10,
+    width: 256,
+    height:40,
+    background: "#6E3CD2",
+    marginLeft: 600,
+    marginBottom:20,
+  },
+}));
 
+function Reportesproveedores() {
+  const classesButtonPurple = buttonStylePurple();
   const classesGrid = gridStyles();
   return (
     <MainLayout>
@@ -60,7 +72,18 @@ function Reportesproveedores() {
             <div className="boxesReporte">
             <TableReclamo />
             </div>
+            <div>
+              <Button
+                variant="contained"
+                color="primary"
+                size="small"
+                className={classesButtonPurple.button}
+              >
+                Descarga PDF
+              </Button>
+            </div>
           </Grid>
+
           <Grid item md={1}></Grid>
         </Grid>
       </div>
