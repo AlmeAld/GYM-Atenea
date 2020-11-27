@@ -47,7 +47,7 @@ export default function FixedContainer() {
   return (
     <Container>
       <Box className="content">
-        <Box className="Header">
+        <Box id="Header">
           <img src={Company} alt="" className="avatar" />
           <div className="prov-title">
             <h2>{user.proveedor}</h2>
@@ -184,13 +184,13 @@ export default function FixedContainer() {
               </Button>
               <br />
               <Button id="down-btn" variant="contained" color="default">
-                Descargar antecedentes
+                <Descarga />
                 <img src={download} alt="" />
               </Button>
               <br />
 
               <Button id="descargar" className="boxBotton">
-                <Descarga />
+               Descargar vista en PDF
               </Button>
             </Grid>
           </Grid>
