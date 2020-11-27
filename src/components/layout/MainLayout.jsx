@@ -22,7 +22,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import SpotifyLogo from "../../assets/spotify.png";
-import Logo from "../../assets/Logo-Regional-Blanco.png";
+import Logo from "../../assets/logo.png";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import Collapse from "@material-ui/core/Collapse";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
