@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  Paper,
   Table,
   TableBody,
   TableCell,
@@ -42,7 +43,7 @@ function TableComunicacion() {
 
   return (
     <>
-      <div className="filterZone">
+      <Paper>
         <TableContainer>
           <Table>
             <TableHead>
@@ -66,7 +67,7 @@ function TableComunicacion() {
             </TableBody>
           </Table>
         </TableContainer>
-      </div>
+      </Paper>
     </>
   );
 }
