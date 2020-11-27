@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import "./mainLayout.scss";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -14,9 +14,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
 import Badge from "@material-ui/core/Badge";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -30,11 +28,12 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import FolderIcon from "@material-ui/icons/Folder";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import ChatIcon from "@material-ui/icons/Chat";
 import fire from "../../firebase.js";
 import { Link } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 
-const drawerWidth = 240;
+const drawerWidth = 320;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -156,9 +155,10 @@ const useStyles = makeStyles((theme) => ({
     color: "#000",
   },
   onlyIcon: {
-    display: "block",
+    display: "flex",
     marginBottom: "20px",
     marginTop: "20px",
+    justifyContent: "center",
   },
 }));
 
@@ -241,22 +241,10 @@ function ProfileMenu({ icon, menuText, submenus }) {
 }
 
 function MainLayout({ children }) {
-  //styles
   const classes = useStyles();
-  const theme = useTheme();
-  //hooks
   const [open, setOpen] = React.useState(true);
-  //sidebar hooks
-  const [openMainMenu, setOpenMainMenu] = React.useState(true);
-  //functions
-  // abrir la lista deplegable del sidebar
-  //abrir el menu
   const handleDrawerOpen = () => {
     setOpen(!open);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
   };
 
   // perfil opciones
@@ -356,7 +344,7 @@ function MainLayout({ children }) {
               </Link>
 
               <MenuWithSubMenus
-                icon={<AnnouncementIcon />}
+                icon={<ChatIcon />}
                 menuText="Chat Interno"
                 submenus={[
                   {
@@ -374,7 +362,7 @@ function MainLayout({ children }) {
                 ]}
               />
               <MenuWithSubMenus
-                icon={<AnnouncementIcon />}
+                icon={<AssignmentIcon />}
                 menuText="Reportes"
                 submenus={[
                   {
@@ -427,12 +415,12 @@ function MainLayout({ children }) {
               </Link>
               <Link to="/Comunicaciones" className="linkClass">
                 <ListItemIcon className={classes.onlyIcon} id="icon">
-                  <AnnouncementIcon />
+                  <ChatIcon />
                 </ListItemIcon>
               </Link>
               <Link to="/ReportesProveedores" className="linkClass">
                 <ListItemIcon className={classes.onlyIcon} id="icon">
-                  <AnnouncementIcon />
+                  <AssignmentIcon />
                 </ListItemIcon>
               </Link>
 
@@ -445,16 +433,23 @@ function MainLayout({ children }) {
         )}
 
         <div className="divLogo">
-          <img src={SpotifyLogo} alt="" className={classes.logoSpotify} />
-          <iframe
-            src="https://open.spotify.com/embed/playlist/4xJOCBqKbD4u9Q55QMxrrc"
-            width="300"
-            title="spotify"
-            height="380"
-            frameborder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
+          <img
+            onClick={() => setOpen(true)}
+            src={SpotifyLogo}
+            alt=""
+            className="logoSpotify"
           />
+          {open && (
+            <iframe
+              src="https://open.spotify.com/embed/playlist/4xJOCBqKbD4u9Q55QMxrrc"
+              width="250"
+              title="spotify"
+              height="380"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            />
+          )}
         </div>
       </Drawer>
       <main className={classes.content}>
