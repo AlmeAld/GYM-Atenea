@@ -1,16 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import TextField from "@material-ui/core/TextField";
-import TextareaAutosize from "@material-ui/core/TextareaAutosize";
-import download from "../assets/icons/download.svg";
-import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import Company from "../assets/icons/company.svg";
-import Grid from "@material-ui/core/Grid";
-// import "./proveedoresContent.scss";
-import firebase from "../firebase";
-import Descarga from "../components/DescargarPDF";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import TextField from '@material-ui/core/TextField';
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import download from '../assets/icons/download.svg';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import IconButton from '@material-ui/core/IconButton';
+import Company from '../assets/icons/company.svg';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import '../components/proveedoresContent.scss';
+import firebase from '../firebase';
+import Descarga from '../components/DescargarPDF';
+import Edit from '../assets/icons/edit.svg';
 export default function FixedContainer() {
+  const [disable, setDisabled] = useState(true);
+  const [disableDate, setDisabledDate] = useState(true);
+  const [disableCalificacion, setDisabledCalificacion] = useState(true);
+
   const { id: userid } = useParams();
   const [user, setUser] = useState({});
 
@@ -19,7 +26,7 @@ export default function FixedContainer() {
       try {
         const data = await firebase
           .firestore()
-          .collection("Seguimiento-reclamos")
+          .collection('Seguimiento-reclamos')
           .get();
         const arrayData = await data.docs.map((doc) => ({
           id: doc.id,
@@ -38,7 +45,7 @@ export default function FixedContainer() {
   console.log(user);
 
   return (
-    <React.Fragment>
+    <Container>
       <Box className="content">
         <Box className="Header">
           <img src={Company} alt="" className="avatar" />
@@ -69,14 +76,14 @@ export default function FixedContainer() {
               <TextField
                 disabled
                 id="outlined-disabled"
-                defaultValue="Nombre de proyecto"
+                defaultValue="Proyecto lima"
                 variant="outlined"
               />
               <label htmlFor="name">Oficina principal </label>
               <TextField
                 disabled
                 id="outlined-disabled"
-                defaultValue="Esencial"
+                defaultValue="Lima"
                 variant="outlined"
               />
               <label htmlFor="name">Fecha de reclamo </label>
@@ -104,63 +111,91 @@ export default function FixedContainer() {
               <TextField
                 disabled
                 id="outlined-disabled"
-                defaultValue="nombre de administrador de contrato"
+                defaultValue="Julio Perez"
                 variant="outlined"
               />
             </Grid>
             <Grid container item md={6} direction="column">
-              <label htmlFor="name">{user.estado} </label>
-              <TextField
-                disabled
-                id="outlined-disabled"
-                defaultValue="en negociacion"
-                variant="outlined"
-              />
-              <label htmlFor="name">Fecha de Estado </label>
-              <TextField
-                disabled
-                id="outlined-disabled"
-                defaultValue="12/11/2020"
-                variant="outlined"
-              />
-              <label htmlFor="name">Calificación</label>
-              <TextField
-                disabled
-                id="outlined-disabled"
-                defaultValue="Por calificar"
-                variant="outlined"
-              />
+              <div className="eje">
+                <label htmlFor="name">{user.estado} </label>
+                <TextField
+                  disabled={disable}
+                  id="outlined-disabled"
+                  defaultValue="en negociacion"
+                  variant="outlined"
+                />
+                <IconButton id="estado" aria-label="edit">
+                  <img
+                    id="estado"
+                    className="edit-btn"
+                    onClick={() => setDisabled(false)}
+                    src={Edit}
+                    alt=""
+                  />
+                </IconButton>
+              </div>
+              <div className="eje">
+                <label htmlFor="name">Fecha de Estado </label>
+                <TextField
+                  disabled={disableDate}
+                  id="outlined-disabled"
+                  defaultValue="12/11/2020"
+                  variant="outlined"
+                />
+                <IconButton id="estado" aria-label="edit">
+                  <img
+                    id="estado"
+                    className="edit-btn"
+                    onClick={() => setDisabledDate(false)}
+                    src={Edit}
+                    alt=""
+                  />
+                </IconButton>
+              </div>
+              <div className="eje">
+                <label htmlFor="name">Calificación</label>
+                <TextField
+                  disabled={disableCalificacion}
+                  id="outlined-disabled"
+                  defaultValue="Por calificar"
+                  variant="outlined"
+                />
+                <IconButton id="estado" aria-label="edit">
+                  <img
+                    id="estado"
+                    className="edit-btn"
+                    onClick={() => setDisabledCalificacion(false)}
+                    src={Edit}
+                    alt=""
+                  />
+                </IconButton>
+              </div>
               <label htmlFor="name">Reseña</label>
               <TextareaAutosize
+                disabled
                 aria-label="minimum height"
                 rowsMin={10}
-                defaultValue="El proveedor aceptó reunirse conmigo
-                para llegar a un acuerdo amistoso con
-                respecto a su pago pendiente. La reunión
-                se llevarpa a cabo el día 23 del presente
-                mes. El proveedor manifiesta que necesita
-                que le armen un cronograma de pagos
-                cada 15 días."
+                defaultValue="El proveedor aceptó reunirse conmigo para llegar a un acuerdo amistoso conrespecto a su pago pendiente. La reunión se llevarpa a cabo el día 23 del presentemes. El proveedor manifiesta que necesitaque le armen un cronograma de pagos cada 15 días."
               />
-              <label htmlFor="name">""</label>
-              <Button variant="contained" color="default">
+              <br />
+              <Button id="down-btn" variant="contained" color="default">
                 Descargar Contrato
                 <img src={download} alt="" />
               </Button>
-              <label htmlFor="name">""</label>
-              <Button variant="contained" color="default">
+              <br />
+              <Button id="down-btn" variant="contained" color="default">
                 Descargar antecedentes
                 <img src={download} alt="" />
               </Button>
-              <label htmlFor="name">""</label>
-              
-              <div className="boxBotton">
-                <Descarga/>
-                </div>
+              <br />
+
+              <Button id="descargar" className="boxBotton">
+                <Descarga />
+              </Button>
             </Grid>
           </Grid>
         </Box>
       </Box>
-    </React.Fragment>
+    </Container>
   );
 }
