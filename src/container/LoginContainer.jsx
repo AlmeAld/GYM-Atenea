@@ -158,8 +158,21 @@ function Login() {
           alignItems="center"
           direction="column"
         >
+          <img
+            src={logo}
+            alt=""
+            style={{
+              zIndex: "1000",
+              width: "350px",
+              position: "absolute",
+              marginTop: "50px",
+              marginLeft: "120px",
+            }}
+          />
+
           <div />
           <Box m={20} className={styles.cajaInput}>
+            
             {/* <h1 id="title">{}</h1> */}
             <p>Ingresa tu usuario y contraseña de red</p>
             <div
@@ -208,6 +221,7 @@ function Login() {
               {/* <span>{passwordError}</span> */}
             </div>
             <div>
+              <center>
               <Button variant="contained" color="primary" onClick={HandleLogin}>
                 Iniciar Sesión
               </Button>
@@ -220,6 +234,7 @@ function Login() {
                   recuperar contraseña
                 </span>
               </p>
+              </center>
             </div>
           </Box>
           <div />
