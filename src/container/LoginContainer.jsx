@@ -127,7 +127,7 @@ function Login() {
             borderRight: "2px solid lightgray",
           }}
         >
-          <img
+          {/* <img
             src={logo}
             alt=""
             style={{
@@ -137,7 +137,7 @@ function Login() {
               marginTop: "50px",
               marginLeft: "50px",
             }}
-          />
+          /> */}
           <img
             src={photo}
             alt="img"
@@ -172,7 +172,6 @@ function Login() {
 
           <div />
           <Box m={20} className={styles.cajaInput}>
-            
             {/* <h1 id="title">{}</h1> */}
             <p>Ingresa tu usuario y contraseña de red</p>
             <div
@@ -222,18 +221,22 @@ function Login() {
             </div>
             <div>
               <center>
-              <Button variant="contained" color="primary" onClick={HandleLogin}>
-                Iniciar Sesión
-              </Button>
-              <p>
-                Olvidaste tu contraseña
-                <span
-                  style={{ color: "#3f51b5", cursor: "pointer" }}
-                  onClick={() => setActiveUser(!activeUser)}
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={HandleLogin}
                 >
-                  recuperar contraseña
-                </span>
-              </p>
+                  Iniciar Sesión
+                </Button>
+                <p>
+                  Olvidaste tu contraseña
+                  <span
+                    style={{ color: "#3f51b5", cursor: "pointer" }}
+                    onClick={() => setActiveUser(!activeUser)}
+                  >
+                    recuperar contraseña
+                  </span>
+                </p>
               </center>
             </div>
           </Box>
