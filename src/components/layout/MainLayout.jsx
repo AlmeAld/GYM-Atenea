@@ -324,6 +324,7 @@ function MainLayout({ children }) {
                   <ArrowForwardIosIcon id="arrow-icon" />
                 </ListItem>
               </Link>
+              <Link to="/Reclamos" className="linkClass">
               <MenuWithSubMenus
                 icon={<AnnouncementIcon />}
                 menuText="Reclamos"
@@ -338,7 +339,8 @@ function MainLayout({ children }) {
                   },
                 ]}
               />
-              <Link to="/Proveedores" className="linkClass">
+              </Link>
+              <Link to="/ReportesProveedores" className="linkClass">
                 <ListItem button className={classes.tr}>
                   <ListItemIcon id="icon">
                     <PeopleAltIcon />
