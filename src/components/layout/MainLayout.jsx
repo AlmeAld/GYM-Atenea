@@ -22,7 +22,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import SpotifyLogo from "../../assets/spotify.png";
-import Logo from "../../assets/Logo-Regional-Blanco.png";
+import Logo from "../../assets/logo.png";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import Collapse from "@material-ui/core/Collapse";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
@@ -324,21 +324,23 @@ function MainLayout({ children }) {
                   <ArrowForwardIosIcon id="arrow-icon" />
                 </ListItem>
               </Link>
-              <MenuWithSubMenus
-                icon={<AnnouncementIcon />}
-                menuText="Reclamos"
-                submenus={[
-                  {
-                    route: "/IngresoReclamos",
-                    text: "IngresoReclamos",
-                  },
-                  {
-                    route: "/SeguimientosReclamos",
-                    text: "SeguimientosReclamos",
-                  },
-                ]}
-              />
-              <Link to="/Proveedores" className="linkClass">
+              <Link to="/Reclamos" className="linkClass">
+                <MenuWithSubMenus
+                  icon={<AnnouncementIcon />}
+                  menuText="Reclamos"
+                  submenus={[
+                    {
+                      route: "/IngresoReclamos",
+                      text: "IngresoReclamos",
+                    },
+                    {
+                      route: "/SeguimientosReclamos",
+                      text: "SeguimientosReclamos",
+                    },
+                  ]}
+                />
+              </Link>
+              <Link to="/ReportesProveedores" className="linkClass">
                 <ListItem button className={classes.tr}>
                   <ListItemIcon id="icon">
                     <PeopleAltIcon />
@@ -444,15 +446,15 @@ function MainLayout({ children }) {
 
         <div className="divLogo">
           <img src={SpotifyLogo} alt="" className={classes.logoSpotify} />
-          {/* <iframe
-          src="https://open.spotify.com/embed/playlist/4xJOCBqKbD4u9Q55QMxrrc"
-          width="300"
-          title="spotify"
-          height="380"
-          frameborder="0"
-          allowtransparency="true"
-          allow="encrypted-media"
-        /> */}
+          <iframe
+            src="https://open.spotify.com/embed/playlist/4xJOCBqKbD4u9Q55QMxrrc"
+            width="300"
+            title="spotify"
+            height="380"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          />
         </div>
       </Drawer>
       <main className={classes.content}>
