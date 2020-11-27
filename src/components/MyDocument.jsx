@@ -1,10 +1,9 @@
 import React from "react";
-import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+import { Document, Page, Text, StyleSheet } from "@react-pdf/renderer";
 
 const MyDocument = () => (
   <Document>
     <Page style={styles.body}>
-
       <Text style={styles.title}>Documento Proveedor</Text>
       <br></br>
       <br></br>
@@ -71,16 +70,16 @@ const MyDocument = () => (
         sociales del Estado y de los particulares.
       </Text>
 
-      <Text
-        style={styles.pageNumber}
-        render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
-        fixed
-      />
-    </Page>
-  </Document>
-);
+       <Text
+         style={styles.pageNumber}
+         render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+         fixed
+       />
+     </Page>
+   </Document>
+ );
 
-const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
   body: {
     paddingTop: 35,
     paddingBottom: 65,

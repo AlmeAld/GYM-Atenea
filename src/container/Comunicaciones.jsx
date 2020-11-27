@@ -23,7 +23,7 @@ function Comunicaciones() {
             <TableComunicacion />
           </Grid>
           <Grid item md={1}>
-            <a href=""> Ir Teams</a>
+            <a href="/"> Ir Teams</a>
           </Grid>
         </Grid>
       </div>

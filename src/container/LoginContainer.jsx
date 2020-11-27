@@ -10,7 +10,7 @@
 
 // export default LoginContainer;
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import fire from "../firebase.js";
 import { useHistory } from "react-router-dom";
 import {
@@ -24,6 +24,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircleOutlined";
 import Lock from "@material-ui/icons/LockOutlined";
 import photo from "../assets/photo.png";
+import logo from "../assets/logo.png";
 
 // material styles
 const useStyles = makeStyles((theme) => ({
@@ -45,24 +46,24 @@ const useStyles = makeStyles((theme) => ({
 
 function Login() {
   const history = useHistory();
-  const [user, setUser] = useState("");
+  // const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  // const [emailError, setEmailError] = useState("");
+  // const [passwordError, setPasswordError] = useState("");
   const [activeUser, setActiveUser] = useState(false);
 
   console.log(email, password);
 
-  const clearInputs = () => {
-    setEmail("");
-    setPassword("");
-  };
+  // const clearInputs = () => {
+  //   setEmail("");
+  //   setPassword("");
+  // };
 
-  const clearError = () => {
-    setPasswordError("");
-    setEmailError("");
-  };
+  // const clearError = () => {
+  //   setPasswordError("");
+  //   setEmailError("");
+  // };
 
   // firebase functions
   function HandleLogin(event) {
@@ -102,17 +103,17 @@ function Login() {
       .catch((err) => console.log(err));
   }
 
-  const SignOut = () => {
-    fire
-      .auth()
-      .signOut()
-      .then(function () {
-        // Sign-out successful.
-      })
-      .catch(function (error) {
-        // An error happened.
-      });
-  };
+  // const SignOut = () => {
+  //   fire
+  //     .auth()
+  //     .signOut()
+  //     .then(function () {
+  //       // Sign-out successful.
+  //     })
+  //     .catch(function (error) {
+  //       // An error happened.
+  //     });
+  // };
 
   const styles = useStyles();
 
@@ -126,9 +127,17 @@ function Login() {
             borderRight: "2px solid lightgray",
           }}
         >
-          {/* <img src={Logo} alt="" style={{zIndex: "1000" , width:"150px", position:"absolute", marginTop: "50px",     marginLeft: "50px"}} 
-
-          /> */}
+          <img
+            src={logo}
+            alt=""
+            style={{
+              zIndex: "1000",
+              width: "150px",
+              position: "absolute",
+              marginTop: "50px",
+              marginLeft: "50px",
+            }}
+          />
           <img
             src={photo}
             alt="img"
@@ -149,8 +158,21 @@ function Login() {
           alignItems="center"
           direction="column"
         >
+          <img
+            src={logo}
+            alt=""
+            style={{
+              zIndex: "1000",
+              width: "350px",
+              position: "absolute",
+              marginTop: "50px",
+              marginLeft: "120px",
+            }}
+          />
+
           <div />
           <Box m={20} className={styles.cajaInput}>
+            
             {/* <h1 id="title">{}</h1> */}
             <p>Ingresa tu usuario y contraseña de red</p>
             <div
@@ -178,7 +200,7 @@ function Login() {
                   ),
                 }}
               />
-              <span>{emailError}</span>
+              {/* <span>{emailError}</span> */}
               <TextField
                 className={styles.input}
                 id="filled-password-input"
@@ -196,9 +218,10 @@ function Login() {
                   ),
                 }}
               />
-              <span>{passwordError}</span>
+              {/* <span>{passwordError}</span> */}
             </div>
             <div>
+              <center>
               <Button variant="contained" color="primary" onClick={HandleLogin}>
                 Iniciar Sesión
               </Button>
@@ -211,6 +234,7 @@ function Login() {
                   recuperar contraseña
                 </span>
               </p>
+              </center>
             </div>
           </Box>
           <div />

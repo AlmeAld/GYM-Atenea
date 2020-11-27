@@ -6,7 +6,6 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import { Container } from "@material-ui/core";
 
 const buttonStyle = makeStyles((theme) => ({
   button: {
@@ -29,18 +28,19 @@ const gridStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 31,
     marginLeft: 100,
+    width: 1200,
   },
 }));
 
-const botonesBarraStyle = makeStyles((theme) => ({
-  button: {
-    width: 200,
-    background: "#E5E5E5",
-  },
-  nested: {
-    paddingLeft: theme.spacing(4),
-  },
-}));
+// const botonesBarraStyle = makeStyles((theme) => ({
+//   button: {
+//     width: 200,
+//     background: "#E5E5E5",
+//   },
+//   nested: {
+//     paddingLeft: theme.spacing(4),
+//   },
+// }));
 
 const useStyles = makeStyles({
   root: {
@@ -75,7 +75,7 @@ function IngresoReclamo() {
   const categoryButton = buttonStyleCategory();
 
   return (
-    <Container className={classesGrid.root}>
+    <div className={classesGrid.root}>
       <Grid container>
         <div className="barra">
           <h1>Ingreso de Datos </h1>
@@ -217,7 +217,7 @@ function IngresoReclamo() {
           </div>
         </Grid>
       </Grid>
-    </Container>
+    </div>
   );
 }
 
