@@ -57,7 +57,7 @@ export default function FixedContainer() {
         <Box className="body">
           <Grid container spacing={4}>
             <Grid container item md={6} direction="column">
-              <label htmlFor="name">{user.giroComercial} </label>
+              <label htmlFor="name">Giro comercial</label>
               <TextField
                 disabled
                 id="outlined-disabled"
@@ -65,7 +65,7 @@ export default function FixedContainer() {
                 variant="outlined"
               />
 
-              <label htmlFor="name">{user.tipoProveedor} </label>
+              <label htmlFor="name">Tipo de proveedor</label>
               <TextField
                 disabled
                 id="outlined-disabled"
@@ -93,7 +93,7 @@ export default function FixedContainer() {
                 defaultValue="24/10/2019"
                 variant="outlined"
               />
-              <label htmlFor="name">{user.tipoReclamo} </label>
+              <label htmlFor="name">Tipo de reclamo</label>
               <TextField
                 disabled
                 id="outlined-disabled"
@@ -117,7 +117,7 @@ export default function FixedContainer() {
             </Grid>
             <Grid container item md={6} direction="column">
               <div className="eje">
-                <label htmlFor="name">{user.estado} </label>
+                <label htmlFor="name">Estado</label>
                 <TextField
                   disabled={disable}
                   id="outlined-disabled"
