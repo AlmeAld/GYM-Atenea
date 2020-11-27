@@ -3,11 +3,11 @@ import TextField from '@material-ui/core/TextField';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import download from '../assets/icons/download.svg';
 import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
 import Company from '../assets/icons/company.svg';
 import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import Edit from '../assets/icons/edit.svg';
+import { Container } from "@material-ui/core";
 import './proveedoresContent.scss';
 
 export default function FixedContainer() {
@@ -16,16 +16,16 @@ export default function FixedContainer() {
     const [disableCalificacion, setDisabledCalificacion]= useState(true);
 
   return (
-    <React.Fragment>
-      <Box className="content">
-        <Box className="Header">
+    <Container>
+      <div className="content">
+        <div className="Header">
           <img src={Company} alt="" className="avatar" />
           <div className="prov-title">
             <h2>AGROMIN SAC</h2>
             <h3>RUC 20549652101</h3>
           </div>
-        </Box>
-        <Box className="body">
+        </div>
+        <div className="body">
           <Grid container spacing={4}>
             <Grid container item md={6} direction="column">
               <label htmlFor="name">Giro comercial </label>
@@ -158,8 +158,8 @@ cada 15 días."
               </Button>
             </Grid>
           </Grid>
-        </Box>
-      </Box>
-    </React.Fragment>
+        </div>
+      </div>
+      </Container>
   );
 }

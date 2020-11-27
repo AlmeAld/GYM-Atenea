@@ -90,7 +90,7 @@ function TopBar() {
 
 
   const isMenuOpen = Boolean(anchorEl);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -138,9 +138,7 @@ function TopBar() {
         <IconButton
           edge="start"
           onClick={handleDrawerOpen}
-          className={clsx(classes.menuButton, {
-            [classes.hide]: open,
-          })}
+    
           color="inherit"
           aria-label="open drawer"
         >

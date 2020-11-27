@@ -4,7 +4,8 @@ import ProveedoresContent from "../components/ProveedoresContent"
 import "./proveedores.scss";
 
 function Proveedores() {
-  return (<MainLayout>
+  return (
+  <MainLayout>
   <div className="container">
     <ProveedoresContent />
   </div>

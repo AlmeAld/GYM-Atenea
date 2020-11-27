@@ -9,6 +9,12 @@
         margin-left: 20px;
         width:200px;
 }
+a{
+    text-decoration:none;
+}
+span{
+    font-size: 0.8rem;
+}
    
     #icon{
         color:white;
@@ -22,3 +28,9 @@
         color:white;
         border-bottom: none;
     }
+.subitem span{
+    font-size:0.8rem;
+}
+svg#arrow-icon {
+    font-size: 0.8rem;
+}
