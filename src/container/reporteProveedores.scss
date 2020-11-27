@@ -1,1 +1,23 @@
-@import '../variablesColores'
+@import '../variablesColores';
+
+.boxesReporte {
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    height: 70vh;
+    color: black;
+    margin-Top:2vh;
+    margin-bottom:5vh;
+    background: $Gris-Claro;
+    padding: 1vh;
+    
+}
+.texto{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin-Top:15vh;
+}
+
+
+
