@@ -40,8 +40,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   appBar: {
-    backgroundColor:"white",
+    backgroundColor: 'white',
     zIndex: theme.zIndex.drawer + 1,
+    width: `calc(100% - ${121}px)`,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -108,8 +109,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   title: {
-    marginTop:6,
-    color:' rgba(110, 60, 210, 1)',
+    marginTop: 6,
+    color: ' rgba(110, 60, 210, 1)',
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
@@ -127,57 +128,57 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  icon:{
-    color:'black'
+  icon: {
+    color: 'black',
   },
   logoSpotify: {
     width: 40,
   },
   tr: {
-    fontSize:'0.9rem',
-    textDecoration:"none",
-    background: "black",
+    fontSize: '0.9rem',
+    textDecoration: 'none',
+    background: 'black',
     '&:hover': {
-       background: "#6E3CD2",
+      background: '#6E3CD2',
     },
   },
 }));
 
-function MainLayout({children}) {
+function MainLayout({ children }) {
+  //styles
   const classes = useStyles();
   const theme = useTheme();
+  //hooks
   const [open, setOpen] = React.useState(true);
-
+  //sidebar hooks
   const [listOpen, setListOpen] = React.useState(false);
+  const [listOpenOne, setListOpenOne] = React.useState(false);
+  const [listOpenTwo, setListOpenTwo] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  //functions
+  // abrir la lista deplegable del sidebar
   const handleClick = () => {
     setListOpen(!listOpen);
   };
-  const [listOpenOne, setListOpenOne] = React.useState(false);
   const handleClickOne = () => {
     setListOpenOne(!listOpenOne);
   };
-  const [listOpenTwo, setListOpenTwo] = React.useState(false);
   const handleClickTwo = () => {
     setListOpenTwo(!listOpenTwo);
   };
+  //abrir el menu
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-
   const isMenuOpen = Boolean(anchorEl);
-
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
 
   const handleMenuClose = () => {
     setAnchorEl(null);
@@ -188,13 +189,13 @@ function MainLayout({children}) {
       .auth()
       .signOut()
       .then(function () {
-      console.log("user out")
+        console.log('user out');
       })
       .catch(function (error) {
-        console.log("An error happened")
+        console.log('An error happened');
       });
   };
-
+  // perfil opciones
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -214,217 +215,254 @@ function MainLayout({children}) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={clsx(classes.appBar, {
-        [classes.appBarShift]: open,
-      })}>
-      <Toolbar>
-        <IconButton
-          edge="start"
-          onClick={handleDrawerOpen}
-    
-          color="inherit"
-          aria-label="open drawer"
-        >
-          <MenuIcon className="menu-icon"/>
-        </IconButton>
-          <IconButton aria-label="show 17 new notifications"  className="icon-nav" >
-            <Badge badgeContent={17} color="secondary">
-              <NotificationsIcon className={classes.icon}/>
-            </Badge>
-          </IconButton>
-        <div className={classes.grow} />
-        <div className={classes.sectionDesktop}>
-          <Typography className={classes.title} variant="h6" noWrap>
-          Andrea Velásquez
-        </Typography>
+      <AppBar
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+      >
+        <Toolbar>
           <IconButton
-            edge="end"
-            aria-label="account of current user"
-            aria-controls={menuId}
-            aria-haspopup="true"
-            onClick={handleProfileMenuOpen}
+            edge="start"
+            onClick={handleDrawerOpen}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon className="menu-icon" />
+          </IconButton>
+          <IconButton
+            aria-label="show 17 new notifications"
             className="icon-nav"
           >
-            <AccountCircle id="avatar"className={classes.icon} />
+            <Badge badgeContent={17} color="secondary">
+              <NotificationsIcon className={classes.icon} />
+            </Badge>
           </IconButton>
-        </div>
-      </Toolbar>
-    </AppBar>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <Typography className={classes.title} variant="h6" noWrap>
+              Andrea Velásquez
+            </Typography>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              className="icon-nav"
+            >
+              <AccountCircle id="avatar" className={classes.icon} />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
       <Drawer
-      variant="permanent"
-      className={clsx(classes.drawer, {
-        [classes.drawerOpen]: open,
-        [classes.drawerClose]: !open,
-      })}
-      classes={{
-        paper: clsx({
+        variant="permanent"
+        className={clsx(classes.drawer, {
           [classes.drawerOpen]: open,
           [classes.drawerClose]: !open,
-        }),
-      }}
-    >
-      <div
-      // className={classes.toolbar}
+        })}
+        classes={{
+          paper: clsx({
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open,
+          }),
+        }}
       >
-        <div onClick={handleDrawerClose} className="logo-cont">
-          <img src={Logo} alt="" className="logo" />
+        <div
+        // className={classes.toolbar}
+        >
+          <div onClick={handleDrawerClose} className="logo-cont">
+            <img src={Logo} alt="" className="logo" />
+          </div>
         </div>
-      </div>
 
-      <Divider />
-      <List>
-        <Link to="/Resumen" className="linkClass">
-          <ListItem button className={classes.tr}>
+        <Divider />
+        <List>
+          <Link to="/Resumen" className="linkClass">
+            <ListItem button className={classes.tr}>
+              <ListItemIcon id="icon">
+                <AssessmentIcon />
+              </ListItemIcon>
+              <ListItemText
+                className={clsx(classes.menuButton, {
+                  [classes.hide]: !open,
+                })}
+                primary={'Resumen'}
+              />
+              <ArrowForwardIosIcon id="arrow-icon" />
+            </ListItem>
+          </Link>
+          <ListItem className={classes.tr} button onClick={handleClick}>
             <ListItemIcon id="icon">
-              <AssessmentIcon />
+              <AnnouncementIcon />
             </ListItemIcon>
             <ListItemText
               className={clsx(classes.menuButton, {
                 [classes.hide]: !open,
               })}
-              primary={'Resumen'}
+              primary="Reclamos"
             />
-            <ArrowForwardIosIcon id="arrow-icon"/>
+            {listOpen ? (
+              <ExpandLess />
+            ) : (
+              <ArrowForwardIosIcon id="arrow-icon" />
+            )}
           </ListItem>
-        </Link>
-        <ListItem  className={classes.tr} button onClick={handleClick}>
-          <ListItemIcon id="icon">
-            <AnnouncementIcon />
-          </ListItemIcon>
-          <ListItemText
-            className={clsx(classes.menuButton, {
-              [classes.hide]: !open,
-            })}
-            primary="Reclamos"
-          />
-          {listOpen ? <ExpandLess /> : <ArrowForwardIosIcon id="arrow-icon"/>}
-        </ListItem>
-        <Collapse in={listOpen} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <Link to="/IngresoReclamos" className="linkClass">
-              <ListItem
-                button
-                // className={classes.nested}
-              >
-                <ListItemIcon id="icon"></ListItemIcon>
-                <ListItemText
-                  className="subitem"
-                  primary="Ingresar reclamo"
-                />
-              </ListItem>
-            </Link>
-          </List>
-          <List component="div" disablePadding>
-            <Link to="/SeguimientosReclamos" className="linkClass">
-              <ListItem
-                button
-                // className={classes.nested}
-              >
-                <ListItemIcon id="icon"></ListItemIcon>
-                <ListItemText  className="subitem" primary="Seguimiento reclamo" />
-              </ListItem>
-            </Link>
-          </List>
-        </Collapse>
+          <Collapse in={listOpen} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <Link to="/IngresoReclamos" className="linkClass">
+                <ListItem
+                  button
+                  // className={classes.nested}
+                >
+                  <ListItemIcon id="icon"></ListItemIcon>
+                  <ListItemText
+                    className="subitem"
+                    primary="Ingresar reclamo"
+                  />
+                </ListItem>
+              </Link>
+            </List>
+            <List component="div" disablePadding>
+              <Link to="/SeguimientosReclamos" className="linkClass">
+                <ListItem
+                  button
+                  // className={classes.nested}
+                >
+                  <ListItemIcon id="icon"></ListItemIcon>
+                  <ListItemText
+                    className="subitem"
+                    primary="Seguimiento reclamo"
+                  />
+                </ListItem>
+              </Link>
+            </List>
+          </Collapse>
 
-        <Link to="/Proveedores" className="linkClass">
+          <Link to="/Proveedores" className="linkClass">
+            <ListItem button className={classes.tr}>
+              <ListItemIcon id="icon">
+                <PeopleAltIcon />
+              </ListItemIcon>
+              <ListItemText
+                className={clsx(classes.menuButton, {
+                  [classes.hide]: !open,
+                })}
+                primary={'Proveedores'}
+              />
+              <ArrowForwardIosIcon id="arrow-icon" />
+            </ListItem>
+          </Link>
+          <ListItem className={classes.tr} button onClick={handleClickOne}>
+            <ListItemIcon id="icon">
+              <MailIcon clasName="icon-side-menu" />
+            </ListItemIcon>
+            <ListItemText
+              className={clsx(classes.menuButton, {
+                [classes.hide]: !open,
+              })}
+              primary="Chat interno"
+            />
+            {listOpenOne ? (
+              <ExpandLess />
+            ) : (
+              <ArrowForwardIosIcon id="arrow-icon" />
+            )}
+          </ListItem>
+          <Collapse in={listOpenOne} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <Link to="/Comunicaciones" className="linkClass">
+                <ListItem
+                  button
+                  // className={classes.nested}
+                >
+                  <ListItemIcon id="icon"></ListItemIcon>
+                  <ListItemText
+                    className="subitem"
+                    primary="Firma por defecto"
+                  />
+                </ListItem>
+              </Link>
+            </List>
+            <List component="div" disablePadding>
+              <Link to="/Comunicaciones" className="linkClass">
+                <ListItem
+                  button
+                  // className={classes.nested}
+                >
+                  <ListItemIcon id="icon"></ListItemIcon>
+                  <ListItemText className="subitem" primary="Texto Legal" />
+                </ListItem>
+              </Link>
+            </List>
+
+            <List component="div" disablePadding>
+              <Link to="/Comunicaciones" className="linkClass">
+                <ListItem button>
+                  <ListItemIcon id="icon"></ListItemIcon>
+                  <ListItemText
+                    className="subitem"
+                    primary="Nueva comunicación"
+                  />
+                </ListItem>
+              </Link>
+            </List>
+          </Collapse>
+
+          <ListItem className={classes.tr} button onClick={handleClickTwo}>
+            <ListItemIcon id="icon">
+              <AssignmentIcon />
+            </ListItemIcon>
+            <ListItemText
+              className={clsx(classes.menuButton, {
+                [classes.hide]: !open,
+              })}
+              primary="Reportes"
+            />
+            {listOpenTwo ? (
+              <ExpandLess />
+            ) : (
+              <ArrowForwardIosIcon id="arrow-icon" />
+            )}
+          </ListItem>
+          <Collapse in={listOpenTwo} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <Link to="/ReportesProveedores" className="linkClass">
+                <ListItem button>
+                  <ListItemIcon id="icon"></ListItemIcon>
+                  <ListItemText className="subitem" primary="Proveedor--GYM" />
+                </ListItem>
+              </Link>
+            </List>
+            <List component="div" disablePadding>
+              <Link to="/ReportesProveedores" className="linkClass">
+                <ListItem button>
+                  <ListItemIcon id="icon"></ListItemIcon>
+                  <ListItemText className="subitem" primary="GYM--Proveedor" />
+                </ListItem>
+              </Link>
+            </List>
+          </Collapse>
+
           <ListItem button className={classes.tr}>
             <ListItemIcon id="icon">
-              <PeopleAltIcon />
+              <FolderIcon />
             </ListItemIcon>
-            <ListItemText className={clsx(classes.menuButton, {
-              [classes.hide]: !open,
-            })} primary={'Proveedores'} />
-            <ArrowForwardIosIcon id="arrow-icon"/>
+            <ListItemText
+              className={clsx(classes.menuButton, {
+                [classes.hide]: !open,
+              })}
+              primary={'Gestor documental'}
+            />
+            <ArrowForwardIosIcon id="arrow-icon" />
           </ListItem>
-        </Link>
-        <ListItem className={classes.tr} button onClick={handleClickOne}>
-          <ListItemIcon id="icon">
-            <MailIcon clasName="icon-side-menu" />
-          </ListItemIcon>
-          <ListItemText className={clsx(classes.menuButton, {
-              [classes.hide]: !open,
-            })} primary="Chat interno" />
-          {listOpenOne ? <ExpandLess /> : <ArrowForwardIosIcon id="arrow-icon"/>}
-        </ListItem>
-        <Collapse in={listOpenOne} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <Link to="/Comunicaciones" className="linkClass">
-              <ListItem
-                button
-                // className={classes.nested}
-              >
-                <ListItemIcon id="icon"></ListItemIcon>
-                <ListItemText  className="subitem" primary="Firma por defecto" />
-              </ListItem>
-            </Link>
-          </List>
-          <List component="div" disablePadding>
-            <Link to="/Comunicaciones" className="linkClass">
-              <ListItem
-                button
-                // className={classes.nested}
-              >
-                <ListItemIcon id="icon"></ListItemIcon>
-                <ListItemText  className="subitem" primary="Texto Legal" />
-              </ListItem>
-            </Link>
-          </List>
-
-          <List component="div" disablePadding>
-            <Link to="/Comunicaciones" className="linkClass">
-              <ListItem button>
-                <ListItemIcon id="icon"></ListItemIcon>
-                <ListItemText  className="subitem" primary="Nueva comunicación" />
-              </ListItem>
-            </Link>
-          </List>
-        </Collapse>
-
-        <ListItem className={classes.tr} button onClick={handleClickTwo}>
-          <ListItemIcon id="icon">
-            <AssignmentIcon />
-          </ListItemIcon>
-          <ListItemText className={clsx(classes.menuButton, {
-              [classes.hide]: !open,
-            })} primary="Reportes" />
-          {listOpenTwo ? <ExpandLess /> : <ArrowForwardIosIcon id="arrow-icon"/>}
-        </ListItem>
-        <Collapse in={listOpenTwo} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <Link to="/ReportesProveedores" className="linkClass">
-              <ListItem button>
-                <ListItemIcon id="icon"></ListItemIcon>
-                <ListItemText  className="subitem" primary="Proveedor--GYM" />
-              </ListItem>
-            </Link>
-          </List>
-          <List component="div" disablePadding>
-            <Link to="/ReportesProveedores" className="linkClass">
-              <ListItem button> 
-                <ListItemIcon id="icon"></ListItemIcon>
-                <ListItemText  className="subitem" primary="GYM--Proveedor" />
-              </ListItem>
-            </Link>
-          </List>
-        </Collapse>
-
-        <ListItem button className={classes.tr}>
-          <ListItemIcon id="icon">
-            <FolderIcon />
-          </ListItemIcon>
-          <ListItemText className={clsx(classes.menuButton, {
-              [classes.hide]: !open,
-            })} primary={'Gestor documental'} />
-          <ArrowForwardIosIcon id="arrow-icon"/>
-        </ListItem>
-     
-      </List>
-      <Divider />
-      {renderMenu}
-      <div className="divLogo">
-        <img src={SpotifyLogo} alt="" className={classes.logoSpotify} />
-        {/* <iframe
+        </List>
+        <Divider />
+        {renderMenu}
+        <div className="divLogo">
+          <img src={SpotifyLogo} alt="" className={classes.logoSpotify} />
+          {/* <iframe
           src="https://open.spotify.com/embed/playlist/4xJOCBqKbD4u9Q55QMxrrc"
           width="300"
           title="spotify"
@@ -433,15 +471,14 @@ function MainLayout({children}) {
           allowtransparency="true"
           allow="encrypted-media"
         /> */}
-      </div>
-    </Drawer>
+        </div>
+      </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-{children}
+        {children}
       </main>
     </div>
   );
 }
-
 
 export default MainLayout;
