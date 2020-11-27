@@ -24,6 +24,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircleOutlined";
 import Lock from "@material-ui/icons/LockOutlined";
 import photo from "../assets/photo.png";
+import logo from "../assets/logo.png";
 
 // material styles
 const useStyles = makeStyles((theme) => ({
@@ -126,9 +127,17 @@ function Login() {
             borderRight: "2px solid lightgray",
           }}
         >
-          {/* <img src={Logo} alt="" style={{zIndex: "1000" , width:"150px", position:"absolute", marginTop: "50px",     marginLeft: "50px"}} 
-
-          /> */}
+          <img
+            src={logo}
+            alt=""
+            style={{
+              zIndex: "1000",
+              width: "150px",
+              position: "absolute",
+              marginTop: "50px",
+              marginLeft: "50px",
+            }}
+          />
           <img
             src={photo}
             alt="img"
