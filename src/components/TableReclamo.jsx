@@ -16,7 +16,37 @@ import "./tableReclamo.scss";
 // import "./ClientTable.scss";
 // import headerColumn from "../API/headerTable";
 
-function RecoDetails() {
+function SelectCategory() {
+  const [rol, setRol] = useState("categoria");
+
+  function handleSelect(e) {
+    e.preventDefault();
+    setRol(e.currentTarget.value);
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+  return (
+    <form className="empresa-reclamo" onSubmit={handleSubmit}>
+      <select value={rol} onChange={handleSelect}>
+        <option value="categoria">Categoria</option>
+        <option value="Proveedor --- GYM">Proveedor --- GYM</option>
+        <option value="GYM --- Proveedor">GYM --- Proveedor</option>
+      </select>
+    </form>
+  );
+}
+
+function FilterCategory() {
+  return (
+    <div>
+      <p>Seguimiento Reclamos</p>
+      <SelectCategory />
+    </div>
+  );
+}
+
+function RecoDetails(props) {
   const [empresa, setEmpresa] = useState("Todos");
 
   function handleSelect(e) {
@@ -80,6 +110,7 @@ function TableReclamo() {
 
   return (
     <>
+      <FilterCategory />
       <RecoDetails />
       <Paper>
         <TableContainer>
@@ -94,11 +125,16 @@ function TableReclamo() {
             <TableBody>
               {rowData.map((row) => (
                 <TableRow key={row.id}>
+                  {/* <TableCell> */}
+                  {/* <Badge name={row.status} className={row.status} /> */}
+                  {/* </TableCell> */}
                   <TableCell>
-                    {/* <Badge name={row.status} className={row.status} /> */}
+                    <button type="button" className="edit">
+                      <img src={row.imgURL} alt="" />
+                    </button>
                   </TableCell>
                   <TableCell>
-                    <Link to={`/SeguimientosReclamos:${row.id}`}>
+                    <Link to={`/SeguimientosReclamos${row.id}`}>
                       <button type="button" className="profile">
                         <img src={user} alt="" />
                         {row.proveedor}
@@ -120,13 +156,3 @@ function TableReclamo() {
   );
 }
 export default TableReclamo;
-
-{
-  /* <TableCell>
-                    <Link to={`/cliente/recomendaciones:${row.id}`}>
-                      <button type="button" className="ver-mas">
-                        Ver más
-                      </button>
-                    </Link>
-                  </TableCell> */
-}
