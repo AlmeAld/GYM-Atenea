@@ -94,11 +94,16 @@ function TableReclamo() {
             <TableBody>
               {rowData.map((row) => (
                 <TableRow key={row.id}>
+                  {/* <TableCell> */}
+                  {/* <Badge name={row.status} className={row.status} /> */}
+                  {/* </TableCell> */}
                   <TableCell>
-                    {/* <Badge name={row.status} className={row.status} /> */}
+                    <button type="button" className="edit">
+                      <img src={row.imgURL} alt="" />
+                    </button>
                   </TableCell>
                   <TableCell>
-                    <Link to={`/SeguimientosReclamos:${row.id}`}>
+                    <Link to={`/SeguimientosReclamos${row.id}`}>
                       <button type="button" className="profile">
                         <img src={user} alt="" />
                         {row.proveedor}
@@ -120,13 +125,3 @@ function TableReclamo() {
   );
 }
 export default TableReclamo;
-
-{
-  /* <TableCell>
-                    <Link to={`/cliente/recomendaciones:${row.id}`}>
-                      <button type="button" className="ver-mas">
-                        Ver más
-                      </button>
-                    </Link>
-                  </TableCell> */
-}
