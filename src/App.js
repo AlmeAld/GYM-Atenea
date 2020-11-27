@@ -11,11 +11,12 @@ import Comunicaciones from "./container/Comunicaciones";
 import IngresoReclamo from "./container/IngresoReclamo";
 import Proveedores from "./container/Proveedores";
 import Reportesproveedores from "./container/ReporteProveedores";
-import Reclamos from "./container/Reclamos";
+import ReclamosContainer from "./container/ReclamosContainer";
 import ResumenContainer from "./container/ResumenContainer";
 import SeguimientoReclamoUser from "./container/SeguimientoReclamoUser";
 import SeguimientoReclamoContainer from "./container/SeguimientoReclamoContainer";
-import Archivo from "./container/ArchivoPDF";
+
+// import Archivo from "./container/ArchivoPDF";
 import Loader from "./components/Loader";
 
 import "./App.css";
@@ -117,11 +118,11 @@ function App() {
           <Reportesproveedores />
         </LoggedInRoute>
         <LoggedInRoute isUserLoggedIn={isUserLoggedIn} path="/Reclamos">
-          <Reclamos />
+          <ReclamosContainer />
         </LoggedInRoute>
-        <LoggedInRoute path="/Archivo">
+        {/* <LoggedInRoute path="/Archivo">
           <Archivo />
-        </LoggedInRoute>
+        </LoggedInRoute> */}
         {/* <Route path="/GestorDocumental" component={LoginContainer}></Route> */}
       </Switch>
     </Router>
