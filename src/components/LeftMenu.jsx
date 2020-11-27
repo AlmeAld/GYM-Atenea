@@ -139,6 +139,7 @@ function LeftMenu(props) {
             <ArrowForwardIosIcon id="arrow-icon"/>
           </ListItem>
         </Link>
+        <Link to="/Reclamos" className="linkClass">
         <ListItem  className={classes.tr} button onClick={handleClick}>
           <ListItemIcon id="icon">
             <AnnouncementIcon />
@@ -151,6 +152,7 @@ function LeftMenu(props) {
           />
           {listOpen ? <ExpandLess /> : <ArrowForwardIosIcon id="arrow-icon"/>}
         </ListItem>
+        </Link>
         <Collapse in={listOpen} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <Link to="/IngresoReclamos" className="linkClass">
@@ -179,7 +181,7 @@ function LeftMenu(props) {
           </List>
         </Collapse>
 
-        <Link to="/Proveedores" className="linkClass">
+        <Link to="/ReportesProveedores" className="linkClass">
           <ListItem button className={classes.tr}>
             <ListItemIcon id="icon">
               <PeopleAltIcon />
