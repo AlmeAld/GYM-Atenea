@@ -1,15 +1,12 @@
 import React from "react";
 import "./seguimientoReclamos.scss";
-import Mainlayout from "../components/layout/MainLayout";
 import TableReclamo from "../components/TableReclamo";
 
 function SeguimientoReclamoContainer() {
   return (
-    <Mainlayout>
-      <div className="content-table">
-        <TableReclamo />
-      </div>
-    </Mainlayout>
+    <div className="content-table">
+      <TableReclamo />
+    </div>
   );
 }
 
