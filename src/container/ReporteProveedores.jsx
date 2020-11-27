@@ -20,9 +20,10 @@ function RecoDetails() {
   return (
     <form className="detalles-de-recomendacion" onSubmit={handleSubmit}>
       <select value={empresa} onChange={handleSelect}>
-        <option value="Todos">Filtrar por</option>
-        <option value="Empresa-B1">Calificación</option>
-        <option value="Empresa-B2">Giro Comercial</option>
+        <option value="Calificacion">Calificacion</option>
+        <option value="Inhabilitado">Inhabilitado</option>
+        <option value="En observacion">En observacion</option>
+        <option value="Habilitado">Habilitado</option>
       </select>
     </form>
   );
