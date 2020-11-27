@@ -1,14 +1,13 @@
-@import '../variablesColores';
+@import "../variablesColores";
 
 .barra {
-    display: flex;
-    justify-content: space-between;
-    background: $Morado;
-    width: 100vw;
-    height: 10vh;
-    padding: 0.5rem 0;
-    color: $Blanco;
-    padding: 1em;
-    margin-Top:10vh;
-    
+  display: flex;
+  justify-content: space-between;
+  background: $Morado;
+  width: 100vw;
+  height: 10vh;
+  padding: 0.5rem 0;
+  color: $Blanco;
+  padding: 1em;
+  // margin-Top:10vh;
 }

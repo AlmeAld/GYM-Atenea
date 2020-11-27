@@ -1,59 +1,121 @@
+// * {
+//   box-sizing: border-box;
+// }
+
+// .main {
+//   height: 100vh;
+// }
+
+// .logo-cont {
+//   height: 150px;
+//   cursor: pointer;
+//   margin: auto;
+// }
+
+// .logo {
+//   display: block;
+//   padding: 10px;
+//   margin-left: 20px;
+//   width: 200px;
+// }
+
+// a {
+//   text-decoration: none;
+// }
+
+// span {
+//   font-size: 0.8rem;
+// }
+
+// #icon {
+//   color: white;
+// }
+
+// .divLogo {
+//   height: 100vh;
+//   margin: auto;
+//   margin-top: 25%;
+// }
+
+// .linkClass {
+//   color: white;
+//   border-bottom: none;
+// }
+
+// .subitem span {
+//   font-size: 0.8rem;
+// }
+
+// svg#arrow-icon {
+//   font-size: 0.8rem;
+// }
+
+// .avatar {
+//   font-size: 1.8rem;
+// }
+
+// .menu-icon {
+//   color: black;
+// }
+
 * {
   box-sizing: border-box;
 }
-
 .main {
   height: 100vh;
 }
-
 .logo-cont {
-  height: 150px;
+  width: 180px;
+  height: auto;
   cursor: pointer;
   margin: auto;
+  img {
+    width: 100%;
+  }
 }
-
-.logo {
+.logo-cont-collapse {
   display: block;
   padding: 10px;
   margin-left: 20px;
-  width: 200px;
+  width: 100px;
+  height: auto;
+  img {
+    width: 100%;
+  }
 }
-
 a {
   text-decoration: none;
 }
-
 span {
   font-size: 0.8rem;
 }
-
 #icon {
   color: white;
 }
-
 .divLogo {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: auto;
-  margin-top: 25%;
+  align-items: center;
+  margin-top: 20px;
 }
-
+.logoSpotify {
+  margin-bottom: 30px;
+  width: 40px;
+}
 .linkClass {
   color: white;
   border-bottom: none;
 }
-
 .subitem span {
   font-size: 0.8rem;
 }
-
 svg#arrow-icon {
   font-size: 0.8rem;
 }
-
 .avatar {
   font-size: 1.8rem;
 }
-
 .menu-icon {
   color: black;
 }
