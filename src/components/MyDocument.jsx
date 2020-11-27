@@ -70,16 +70,16 @@ const MyDocument = () => (
         sociales del Estado y de los particulares.
       </Text>
 
-      <Text
-        style={styles.pageNumber}
-        render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
-        fixed
-      />
-    </Page>
-  </Document>
-);
+       <Text
+         style={styles.pageNumber}
+         render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+         fixed
+       />
+     </Page>
+   </Document>
+ );
 
-const styles = StyleSheet.create({
+ const styles = StyleSheet.create({
   body: {
     paddingTop: 35,
     paddingBottom: 65,
