@@ -9,7 +9,7 @@ import Company from "../assets/icons/company.svg";
 import Grid from "@material-ui/core/Grid";
 // import "./proveedoresContent.scss";
 import firebase from "../firebase";
-
+import Descarga from "../components/DescargarPDF";
 export default function FixedContainer() {
   const { id: userid } = useParams();
   const [user, setUser] = useState({});
@@ -153,9 +153,10 @@ export default function FixedContainer() {
                 <img src={download} alt="" />
               </Button>
               <label htmlFor="name">""</label>
-              <Button id="descargar" variant="contained">
-                Descargar PDF
-              </Button>
+              
+              <div className="boxBotton">
+                <Descarga/>
+                </div>
             </Grid>
           </Grid>
         </Box>
