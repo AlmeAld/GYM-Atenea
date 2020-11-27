@@ -14,8 +14,7 @@ function Reclamos() {
   return (
     <div className={classesGrid.root}>
       <Grid container>
-        <Grid item md={1}></Grid>
-        <Grid item md={10}>
+        <Grid item>
           <div className="boxes">
             <div className="purpleBox">
               <div className="boxTittle">

@@ -1,59 +1,58 @@
-@import '../variablesColores';
+@import "../variablesColores";
 
 .boxes {
-    display: flex;
-    justify-content: center;
-    width: 60vw;
-    height: 35vh;
-    color: $Blanco;
-    margin-Top:15vh;
-    margin-bottom:8vh;
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  height: 35vh;
+  color: $Blanco;
+  margin-top: 0;
+  margin-bottom: 8vh;
 }
-.boxesUno{
-    width:"100%";
-}
-
-.purpleBox{
-    background: $Lila-Claro;
-    width: 26vw;
-    height: 35vh;
-    color: $Blanco;
-    padding-left: 1vw;
+.boxesUno {
+  width: "100%";
 }
 
-.darkGrayBox{
-    background: $Gris-Medio;
-    width: 26vw;
-    height: 35vh;
-    color: $Blanco;
-    padding-left: 1vw;
+.purpleBox {
+  background: $Lila-Claro;
+  width: 26vw;
+  height: 35vh;
+  color: $Blanco;
+  padding-left: 1vw;
 }
 
-.grayBox{
-    background: $Gris-Claro;
-    width: 26vw;
-    height: 35vh;
-    color: $Morado;
-    padding-left: 1vw;
+.darkGrayBox {
+  background: $Gris-Medio;
+  width: 26vw;
+  height: 35vh;
+  color: $Blanco;
+  padding-left: 1vw;
 }
 
-.boxTittle{
-    border-bottom: 3px;
-    border-bottom-style: solid;
-    border-color: #ffffff;
-    
-}
-.boxBotton{
-    display: flex;
-    justify-content:flex-end;
-    margin-top: 6vh;
-    margin-right: 1vh;
+.grayBox {
+  background: $Gris-Claro;
+  width: 26vw;
+  height: 35vh;
+  color: $Morado;
+  padding-left: 1vw;
 }
 
-.graphicsZone{
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    width: 60vw;
-    height: 45vh;
+.boxTittle {
+  border-bottom: 3px;
+  border-bottom-style: solid;
+  border-color: #ffffff;
+}
+.boxBotton {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6vh;
+  margin-right: 1vh;
+}
+
+.graphicsZone {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  width: 60vw;
+  height: 45vh;
 }
