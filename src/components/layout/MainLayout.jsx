@@ -444,7 +444,7 @@ function MainLayout({ children }) {
 
         <div className="divLogo">
           <img src={SpotifyLogo} alt="" className={classes.logoSpotify} />
-          {/* <iframe
+          <iframe
           src="https://open.spotify.com/embed/playlist/4xJOCBqKbD4u9Q55QMxrrc"
           width="300"
           title="spotify"
@@ -452,7 +452,7 @@ function MainLayout({ children }) {
           frameborder="0"
           allowtransparency="true"
           allow="encrypted-media"
-        /> */}
+        />
         </div>
       </Drawer>
       <main className={classes.content}>
