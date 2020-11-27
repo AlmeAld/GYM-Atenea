@@ -2,7 +2,7 @@ import React from "react";
 import "./comunicaciones.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import CustomizedDialogs from "../components/OpenDialog";
+//import CustomizedDialogs from "../components/OpenDialog";
 import TableComunicacion from "../components/TablaComunicacion";
 
 const gridStyles = makeStyles((theme) => ({
