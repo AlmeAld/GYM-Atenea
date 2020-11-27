@@ -16,11 +16,15 @@ const listenAllDocs = (callback) => {
 const getAllDocuments = () => {
   firebase
     .firestore()
-    .collection("puntosDeControl")
+    .collection("Seguimiento-reclamos")
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => doc.data()); // doc.data() is never undefined for query doc snapshots);
     });
 };
+
+// const infoUser =()=>{
+//   firebase.firestore
+// }
 
 export { listenAllDocs, getAllDocuments };
