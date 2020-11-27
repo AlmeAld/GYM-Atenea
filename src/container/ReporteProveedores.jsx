@@ -32,6 +32,7 @@ const gridStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 31,
     marginLeft: 40,
+    width: 1100,
   },
 }));
 
@@ -51,11 +52,9 @@ function Reportesproveedores() {
   const classesGrid = gridStyles();
   return (
     <>
-      <div className="prueba">loginContainer</div>
       <div className={classesGrid.root}>
         <Grid container>
-          <Grid item md={1}></Grid>
-          <Grid item md={10}>
+          <Grid item>
             <div className="texto">
               {" "}
               <div>
@@ -102,7 +101,7 @@ function Reportesproveedores() {
             </div>
           </Grid>
 
-          <Grid item md={1}></Grid>
+          {/* <Grid item md={1}></Grid> */}
         </Grid>
       </div>
     </>
