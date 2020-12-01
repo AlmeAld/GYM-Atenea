@@ -91,11 +91,8 @@ function Login() {
           src={logoMorado}
           alt="logo Atenea"
           style={{
-            // zIndex: "1000",
             width: "275px",
-            // position: "absolute",
-            marginBottom: "45px",
-            // marginLeft: "185px",
+            marginBottom: "15px",
           }}
         />
 
