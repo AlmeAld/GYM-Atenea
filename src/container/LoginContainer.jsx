@@ -1,15 +1,3 @@
-// import React from "react";
-// import LoginLayout from "../components/layout/LoginLayout"
-// import "./loginContainer.scss";
-
-// function LoginContainer() {
-//   return <div className="prueba">
-//   <LoginLayout />
-//   </div>;
-// }
-
-// export default LoginContainer;
-
 import React, { useState } from "react";
 import fire from "../firebase.js";
 import { useHistory } from "react-router-dom";
@@ -25,71 +13,40 @@ import AccountCircle from "@material-ui/icons/AccountCircleOutlined";
 import Lock from "@material-ui/icons/LockOutlined";
 import photo from "../assets/photo.png";
 import logo from "../assets/logo.png";
+import logoMorado from "../assets/AteneaMoradoChicoV2.svg";
+import "./loginContainer.scss";
 
 // material styles
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   cajaInput: {
-    backgroundColor: theme.palette.background.paper,
     spacing: 8,
-    // boxShadow: theme.shadows[5],
     boxSizing: "border-box",
-    padding: "30px",
-    width: "410px",
-    height: "400px",
+    width: "300px",
+    margin: "auto",
   },
   input: {
-    width: "350",
+    width: "100%",
     marginBottom: "20px",
-    margintLeft: "auto",
+    outline: "none",
+    "& .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-formControl": {
+      // background: "#F4F5F4",
+      width: "100%",
+      // height: "40px",
+      marginLeft: "0",
+    },
   },
-}));
+});
 
 function Login() {
   const history = useHistory();
-  // const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [emailError, setEmailError] = useState("");
-  // const [passwordError, setPasswordError] = useState("");
-  const [activeUser, setActiveUser] = useState(false);
 
   console.log(email, password);
-
-  // const clearInputs = () => {
-  //   setEmail("");
-  //   setPassword("");
-  // };
-
-  // const clearError = () => {
-  //   setPasswordError("");
-  //   setEmailError("");
-  // };
 
   // firebase functions
   function HandleLogin(event) {
     event.preventDefault();
-    // clearError();
-    // fire
-    //   .auth()
-    //   .signInWithEmailAndPassword(email, password)
-    //   .then((res) => {
-    //     console.log(res);
-    //     history.push("/Resumen");
-    //   })
-    //   .catch((error) => {
-    //     switch (error.code) {
-    //       case "auth/invalid-email":
-    //       case "auth/user-disabled":
-    //       case "auth/user-not-found":
-    //         setEmailError(error.message);
-    //         break;
-    //       case "auth/wrong-password":
-    //         setPassword(error.message);
-    //         break;
-    //       default:
-    //         console.log(error);
-    //     }
-    //   });
 
     fire
       .auth()
@@ -103,147 +60,115 @@ function Login() {
       .catch((err) => console.log(err));
   }
 
-  // const SignOut = () => {
-  //   fire
-  //     .auth()
-  //     .signOut()
-  //     .then(function () {
-  //       // Sign-out successful.
-  //     })
-  //     .catch(function (error) {
-  //       // An error happened.
-  //     });
-  // };
-
   const styles = useStyles();
 
   return (
-    <div>
-      <Grid container style={{ minHeight: "100vh" }}>
-        <Grid
-          item
-          sm={6}
+    // <div>
+    <Grid container style={{ minHeight: "100vh" }}>
+      <Grid item sm={8}>
+        <img
+          src={photo}
+          alt="img"
           style={{
-            borderRight: "2px solid lightgray",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: "-1000",
           }}
-        >
-          {/* <img
-            src={logo}
-            alt=""
-            style={{
-              zIndex: "1000",
-              width: "150px",
-              position: "absolute",
-              marginTop: "50px",
-              marginLeft: "50px",
-            }}
-          /> */}
-          <img
-            src={photo}
-            alt="img"
-            style={{
-              width: "100%",
-              height: "100vh",
-              objectFit: "cover",
-              zIndex: "-1000",
-            }}
-          />
-        </Grid>
-        <Grid
-          container
-          justify="space-between"
-          item
-          xs={12}
-          sm={6}
-          alignItems="center"
-          direction="column"
-        >
-          <img
-            src={logo}
-            alt=""
-            style={{
-              zIndex: "1000",
-              width: "350px",
-              position: "absolute",
-              marginTop: "50px",
-              marginLeft: "120px",
-            }}
-          />
-
-          <div />
-          <Box m={20} className={styles.cajaInput}>
-            {/* <h1 id="title">{}</h1> */}
-            <p>Ingresa tu usuario y contraseña de red</p>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "350px",
-                marginBottom: "15px",
-              }}
-            >
-              <TextField
-                m={2}
-                className={styles.input}
-                id="filled-txt-input"
-                label="Email"
-                type="email"
-                variant="outlined"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <AccountCircle />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-              {/* <span>{emailError}</span> */}
-              <TextField
-                className={styles.input}
-                id="filled-password-input"
-                label="Password"
-                type="password"
-                autoComplete="current-password"
-                variant="outlined"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <Lock />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-              {/* <span>{passwordError}</span> */}
-            </div>
-            <div>
-              <center>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={HandleLogin}
-                >
-                  Iniciar Sesión
-                </Button>
-                <p>
-                  Olvidaste tu contraseña
-                  <span
-                    style={{ color: "#3f51b5", cursor: "pointer" }}
-                    onClick={() => setActiveUser(!activeUser)}
-                  >
-                    recuperar contraseña
-                  </span>
-                </p>
-              </center>
-            </div>
-          </Box>
-          <div />
-        </Grid>
+        />
       </Grid>
-    </div>
+      <Grid
+        container
+        justify="space-between"
+        item
+        xs={12}
+        sm={4}
+        alignItems="center"
+        direction="column"
+        className={styles.cajaInput}
+      >
+        <img
+          src={logoMorado}
+          alt="logo Atenea"
+          style={{
+            // zIndex: "1000",
+            width: "275px",
+            // position: "absolute",
+            marginBottom: "45px",
+            // marginLeft: "185px",
+          }}
+        />
+
+        <Box m={20} style={{ margin: "0 160px" }}>
+          <p className="title">Ingresa tu usuario y contraseña de red</p>
+          <TextField
+            // m={2}
+            className={styles.input}
+            id="filled-txt-input"
+            placeholder="Email"
+            type="email"
+            autoComplete="off"
+            variant="outlined"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            InputProps={{
+              marginLeft: "0px",
+              startAdornment: (
+                <InputAdornment>
+                  <AccountCircle
+                    style={{
+                      color: " rgba(110, 60, 210, 1)",
+                      marginRight: "8px",
+                    }}
+                  />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <TextField
+            className={styles.input}
+            id="filled-password-input"
+            placeholder="Password"
+            type="password"
+            autoComplete="current-password"
+            variant="outlined"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Lock
+                    style={{
+                      color: " rgba(110, 60, 210, 1)",
+                    }}
+                  />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <Button
+            variant="contained"
+            onClick={HandleLogin}
+            style={{
+              background: " #6E3CD2",
+              color: "#fff",
+              width: "150px",
+              height: "40px",
+              fontSize: "16px",
+              marginLeft: "85px",
+              marginTop: "14px",
+              marginBottom: "18px",
+            }}
+          >
+            Iniciar Sesión
+          </Button>
+          <p className="password-text">
+            ¿Olvidaste tu contraseña?
+            <span className="span">recuperar contraseña</span>
+          </p>
+        </Box>
+      </Grid>
+    </Grid>
   );
 }
 
