@@ -54,7 +54,7 @@ function TableReclamo() {
     },
     {
       id: "02",
-      label: "Prov",
+      label: "Proveedor",
     },
     {
       id: "03",
