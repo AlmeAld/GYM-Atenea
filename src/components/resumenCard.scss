@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "../variablesColores";
-@import "../variablesColores";
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 .content-resumen {
-  margin-top: 86px;
+  margin-top: 92px;
   .MuiCard-root {
-    border: 2px solid #6e3cd1;
+    border: 3px solid #6e3cd1;
     width: 424px;
+    border-radius: 8px;
     .card-header {
       padding: 22px 35px;
     }
@@ -22,15 +23,27 @@
       .date {
         color: $Morado;
         font-family: "Roboto", sans-serif;
-        font-weight: 400;
+        // font-weight: 400;
         font-size: 14px;
         line-height: 16, 41px;
         margin-right: 8px;
       }
       .text {
         color: $Gris-Medio;
-        font-weight: 400;
+        // font-weight: 400;
         font-size: 14px;
+      }
+    }
+    .update-message {
+      background-color: $Blanco;
+      border-top: 2px solid $Morado;
+      color: $Gris-Medio;
+      font-size: 12px;
+      text-align: center;
+      .span {
+        color: $Morado;
+        margin-left: 5px;
+        cursor: pointer;
       }
     }
   }
