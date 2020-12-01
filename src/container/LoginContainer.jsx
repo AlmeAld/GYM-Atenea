@@ -65,7 +65,7 @@ function Login() {
   return (
     // <div>
     <Grid container style={{ minHeight: "100vh" }}>
-      <Grid item sm={8}>
+      <Grid item sm={7}>
         <img
           src={photo}
           alt="img"
@@ -82,7 +82,7 @@ function Login() {
         justify="space-between"
         item
         xs={12}
-        sm={4}
+        sm={5}
         alignItems="center"
         direction="column"
         className={styles.cajaInput}
@@ -96,7 +96,7 @@ function Login() {
           }}
         />
 
-        <Box m={20} style={{ margin: "0 160px" }}>
+        <Box m={20} style={{ margin: "0px", width: "300px" }}>
           <p className="title">Ingresa tu usuario y contraseña de red</p>
           <TextField
             // m={2}
@@ -143,22 +143,24 @@ function Login() {
               ),
             }}
           />
-          <Button
-            variant="contained"
-            onClick={HandleLogin}
-            style={{
-              background: " #6E3CD2",
-              color: "#fff",
-              width: "150px",
-              height: "40px",
-              fontSize: "16px",
-              marginLeft: "85px",
-              marginTop: "14px",
-              marginBottom: "18px",
-            }}
-          >
-            Iniciar Sesión
-          </Button>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="contained"
+              onClick={HandleLogin}
+              style={{
+                background: " #6E3CD2",
+                color: "#fff",
+                width: "150px",
+                height: "40px",
+                fontSize: "16px",
+                // marginLeft: "85px",
+                marginTop: "14px",
+                marginBottom: "18px",
+              }}
+            >
+              Iniciar Sesión
+            </Button>
+          </div>
           <p className="password-text">
             ¿Olvidaste tu contraseña?
             <span className="span">recuperar contraseña</span>
