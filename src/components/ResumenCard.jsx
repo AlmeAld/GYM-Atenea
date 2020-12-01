@@ -17,15 +17,15 @@ function ResumenCard() {
             </div>
             <div className="details">
               <p className="date">22/11/2020</p>
-              <p className="text">Reclamo pronto pago 'empresa'</p>
+              <p className="text">Reclamo pronto pago H&K</p>
             </div>
             <div className="details">
               <p className="date">18/11/2020</p>
-              <p className="text">Reclamo incumplimiento 'empresa'</p>
+              <p className="text">Reclamo incumplimiento CCE</p>
             </div>
             <div className="details">
               <p className="date">17/11/2020</p>
-              <p className="text">Cambio de fechas Proyecto X</p>
+              <p className="text">Cambio de fechas Proyecto Hotel Chincha</p>
             </div>
           </Card>
         </Grid>
@@ -38,16 +38,16 @@ function ResumenCard() {
             </div>
             <div className="details">
               <p className="date">25/11/2020</p>
-              <p className="text">Nueva fecha de entrega proyecto x</p>
+              <p className="text">Nueva fecha de entrega proyecto CC.Vea</p>
             </div>
             <div className="details">
               <p className="date">25/11/2020</p>
-              <p className="text">Nuevo acuerdo de pago '........'</p>
+              <p className="text">Nuevo acuerdo de pago </p>
             </div>
-            <div>
+            <div className="update-message">
               <p className="text">
-                Revisa todas las actualizaciones en{" "}
-                <span>seguimiento de reclamos</span>
+                Revisa todas las actualizaciones en
+                <span className="span">seguimiento de reclamos</span>
               </p>
             </div>
           </Card>
