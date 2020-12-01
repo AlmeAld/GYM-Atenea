@@ -23,7 +23,6 @@ import "./App.css";
 import MainLayout from "./components/layout/MainLayout";
 // import LoginLayout from "./components/layout/MainLayout";
 
-//esta funcion las vamos a usar cuando sepamos el nombre de las rutas
 function LoggedInRoute({ children, isUserLoggedIn, ...rest }) {
   return (
     <Route
