@@ -1,58 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "../variablesColores";
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
 
-.boxes {
+.cards-content {
   display: flex;
-  justify-content: center;
-  width: 60vw;
-  height: 35vh;
-  color: $Blanco;
-  margin-top: 0;
-  margin-bottom: 8vh;
-}
-.boxesUno {
-  width: "100%";
-}
+  margin: 50px auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
-.purpleBox {
-  background: $Lila-Claro;
-  width: 26vw;
-  height: 35vh;
-  color: $Blanco;
-  padding-left: 1vw;
-}
-
-.darkGrayBox {
-  background: $Gris-Medio;
-  width: 26vw;
-  height: 35vh;
-  color: $Blanco;
-  padding-left: 1vw;
-}
-
-.grayBox {
-  background: $Gris-Claro;
-  width: 26vw;
-  height: 35vh;
-  color: $Morado;
-  padding-left: 1vw;
-}
-
-.boxTittle {
-  border-bottom: 3px;
-  border-bottom-style: solid;
-  border-color: #ffffff;
-}
-.boxBotton {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 6vh;
-  margin-right: 1vh;
+  .card-purple {
+    background: $Lila-Claro;
+    color: $Blanco;
+  }
+  .card-darkGray {
+    background: $Gris-Medio;
+    color: $Blanco;
+    width: 330px;
+  }
+  .card-gray {
+    background: $Gris-Claro;
+    color: $Morado;
+    width: 330px;
+  }
+  .title-card {
+    border-bottom: 3px solid $Blanco;
+    padding: 16px 16px;
+    margin: 0;
+    font-size: 18px;
+  }
+  .card-main {
+    padding: 2px 32px;
+    font-size: 16px;
+  }
+  .small {
+    padding: 1px 16px;
+    text-align: end;
+    font-size: 12px;
+    cursor: pointer;
+    .icon-arrow {
+      margin-left: 10px;
+      font-size: 16px;
+    }
+  }
 }
 
 .graphicsZone {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  width: 60vw;
-  height: 45vh;
+  margin: auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }

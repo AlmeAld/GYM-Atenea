@@ -1,0 +1,38 @@
+@import "../variablesColores";
+
+* {
+  box-sizing: border-box;
+}
+
+.content-sideBar {
+  display: flex;
+  width: 100%;
+  background-color: $Morado;
+  color: $Blanco;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 77px 0 64px;
+  .select-category {
+    width: 350px;
+    padding: 10px 20px;
+    background-color: $Gris-Claro;
+
+    // .option-category {
+    //   background-color: coral;
+    //   &:hover {
+    //     background-color: $Lila-Claro;
+    //   }
+    // }
+  }
+  select option:hover {
+    background-color: $Lila-Claro !important;
+  }
+}
+
+.MuiFilledInput-input {
+  padding: 10px 14px !important;
+}
+
+.MuiListItem-button:hover {
+  background-color: $Lila-Claro !important;
+}

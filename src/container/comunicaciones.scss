@@ -1,26 +1,23 @@
-
-@import '../variablesColores';
+@import "../variablesColores";
 
 .boxes {
-    display: flex;
-    justify-content: space-between;
-    width: 80vw;
-    height: 35vh;
-    color: black;
-    margin-Top:15vh;
-    margin-bottom:5vh;
-    //background: $Gris-Claro;
-    padding: 3vh;
-    
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  height: 35vh;
+  color: black;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+  //background: $Gris-Claro;
+  padding: 3vh;
 }
 
-
-.graphicsZone{
-    display: flex;
-    justify-content: flex-start;
-    width: 80vw;
-    height: 35vh;
-    //background: $Gris-Claro;
-    color: black;
-    padding: 3vh;
-}
+// .graphicsZone{
+//     display: flex;
+//     justify-content: flex-start;
+//     width: 80vw;
+//     height: 35vh;
+//     //background: $Gris-Claro;
+//     color: black;
+//     padding: 3vh;
+// }

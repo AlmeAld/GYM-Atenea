@@ -15,7 +15,7 @@ function Comunicaciones() {
   const classesGrid = gridStyles();
   return (
     <>
-      <div className="prueba">loginContainer</div>
+      {/* <div className="prueba">loginContainer</div> */}
       <div className={classesGrid.root}>
         <Grid container>
           <Grid item md={1}></Grid>

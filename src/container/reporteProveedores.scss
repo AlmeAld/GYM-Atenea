@@ -16,3 +16,24 @@
   justify-content: space-between;
   width: 1200px;
 }
+
+.content-filter-reporte {
+  display: flex;
+  width: 450px;
+  justify-content: space-between;
+  align-items: center;
+  // padding: 0 77px 0 64px;
+  .select-category {
+    width: 160px;
+    padding: 8px 18px;
+    background-color: $Gris-Claro;
+  }
+  // select option:hover {
+  //   background-color: $Lila-Claro !important;
+  // }
+}
+
+.content-button {
+  display: flex;
+  justify-content: flex-end;
+}
